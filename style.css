@@ -17,12 +17,11 @@ body {
 }
 
 #navbar {
-    --navbar-height: 3rem;
+    --navbar-height: 2.5rem;
     --navbar-height-half: calc(var(--navbar-height) / 2);
     --navbar-height-diag: calc(var(--navbar-height-half) * 1.4142);
     --navbar-height-diag-half: calc(var(--navbar-height-diag) / 2);
     background-color: var(--default-black);
-    width: 100%;
     height: var(--navbar-height);
     display: flex;
     justify-content: space-between;
@@ -72,8 +71,8 @@ body {
 
 #hero {
     background-color: var(--default-beige-light);
-    width: 100%;
-    aspect-ratio: 4 / 1;
+    width: 100vw;
+    height: 25vw;
     padding: 1rem;
     display: grid;
     grid-template-columns: 1fr [hero-1-start] 30% [hero-1-end hero-image-start] 25% [hero-image-end hero-2-start] 30% [hero-2-end] 1fr;
