@@ -12,6 +12,10 @@
     --default-green-dark: #018790;
 }
 
+body {
+    margin: 0;
+}
+
 #navbar {
     --navbar-height: 3rem;
     --navbar-height-half: calc(var(--navbar-height) / 2);
@@ -68,6 +72,8 @@
 
 #hero {
     background-color: var(--default-beige-light);
+    width: 100%;
+    aspect-ratio: 4 / 1;
     padding: 1rem;
     display: grid;
     grid-template-columns: 1fr [hero-1-start] 30% [hero-1-end hero-image-start] 25% [hero-image-end hero-2-start] 30% [hero-2-end] 1fr;
@@ -81,10 +87,12 @@
 
 #hero-1 {
     grid-area: hero-1;
+    padding: 2rem;
 }
 
 #hero-2 {
     grid-area: hero-2;
+    padding: 2rem;
 }
 
 .hero-header {
