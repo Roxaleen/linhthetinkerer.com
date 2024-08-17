@@ -36,20 +36,34 @@
 
 #navbar-links a:first-child {
     padding-left: var(--navbar-height);
-    background: linear-gradient(45deg, transparent var(--navbar-height-diag), var(--default-purple-dark) var(--navbar-height-diag), var(--default-purple-dark) calc(100% - var(--navbar-height-diag-half)), var(--default-red-dark) calc(100% - var(--navbar-height-diag-half)));
+    background: linear-gradient(45deg,
+        transparent var(--navbar-height-diag),
+        var(--default-purple-dark) var(--navbar-height-diag),
+        var(--default-purple-dark) calc(100% - var(--navbar-height-diag-half)),
+        var(--default-red-dark) calc(100% - var(--navbar-height-diag-half)));
 }
 
 #navbar-links a:nth-child(2) {
-    background: linear-gradient(45deg, var(--default-purple-dark) var(--navbar-height-diag-half), var(--default-red-dark) var(--navbar-height-diag-half), var(--default-red-dark) calc(100% - var(--navbar-height-diag-half)), var(--default-yellow-dark) calc(100% - var(--navbar-height-diag-half)));
+    background: linear-gradient(45deg,
+        var(--default-purple-dark) var(--navbar-height-diag-half),
+        var(--default-red-dark) var(--navbar-height-diag-half),
+        var(--default-red-dark) calc(100% - var(--navbar-height-diag-half)),
+        var(--default-yellow-dark) calc(100% - var(--navbar-height-diag-half)));
 }
 
 #navbar-links a:nth-child(3) {
-    background: linear-gradient(45deg, var(--default-red-dark) var(--navbar-height-diag-half), var(--default-yellow-dark) var(--navbar-height-diag-half), var(--default-yellow-dark) calc(100% - var(--navbar-height-diag-half)), var(--default-green-dark) calc(100% - var(--navbar-height-diag-half)));
+    background: linear-gradient(45deg,
+        var(--default-red-dark) var(--navbar-height-diag-half),
+        var(--default-yellow-dark) var(--navbar-height-diag-half),
+        var(--default-yellow-dark) calc(100% - var(--navbar-height-diag-half)),
+        var(--default-green-dark) calc(100% - var(--navbar-height-diag-half)));
 }
 
 #navbar-links a:nth-child(4) {
     padding-right: 1rem;
-    background: linear-gradient(45deg, var(--default-yellow-dark) var(--navbar-height-diag-half), var(--default-green-dark) var(--navbar-height-diag-half));
+    background: linear-gradient(45deg,
+        var(--default-yellow-dark) var(--navbar-height-diag-half),
+        var(--default-green-dark) var(--navbar-height-diag-half));
 }
 
 #hero {
