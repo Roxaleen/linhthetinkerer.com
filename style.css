@@ -13,7 +13,7 @@
 }
 
 #navbar {
-    --navbar-height: 2rem;
+    --navbar-height: 3rem;
     --navbar-height-half: calc(var(--navbar-height) / 2);
     --navbar-height-diag: calc(var(--navbar-height-half) * 1.4142);
     --navbar-height-diag-half: calc(var(--navbar-height-diag) / 2);
