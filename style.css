@@ -54,6 +54,7 @@
 
 #hero {
     background-color: var(--default-beige-light);
+    padding: 1rem;
     display: grid;
     grid-template-columns: 1fr [hero-1-start] 30% [hero-1-end hero-image-start] 25% [hero-image-end hero-2-start] 30% [hero-2-end] 1fr;
 }
