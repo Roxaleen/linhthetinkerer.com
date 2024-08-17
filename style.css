@@ -1,0 +1,93 @@
+:root {
+    font-size: 16px;
+    font-family: "Lato";
+    text-align: justify;
+    --default-black: #000;
+    --default-white: #fff;
+    --default-beige-light: #e9e6e1;
+    --default-beige-dark: #afaca9;
+    --default-purple-dark: #881d7d;
+    --default-yellow-dark: #ed9527;
+    --default-red-dark: #c60238;
+    --default-green-dark: #018790;
+}
+
+#navbar {
+    --navbar-height: 2rem;
+    --navbar-height-half: calc(var(--navbar-height) / 2);
+    --navbar-height-diag: calc(var(--navbar-height-half) * 1.4142);
+    --navbar-height-diag-half: calc(var(--navbar-height-diag) / 2);
+    background-color: var(--default-black);
+    width: 100%;
+    height: var(--navbar-height);
+    display: flex;
+    justify-content: space-between;
+}
+
+#navbar-links a {
+    font-family: "Phudu";
+    text-transform: uppercase;
+    color: var(--default-white);
+    display: inline-block;
+    line-height: var(--navbar-height);
+    padding: 0 var(--navbar-height-half);
+    text-decoration: none;
+}
+
+#navbar-links a:first-child {
+    padding-left: var(--navbar-height);
+    background: linear-gradient(45deg, transparent var(--navbar-height-diag), var(--default-purple-dark) var(--navbar-height-diag), var(--default-purple-dark) calc(100% - var(--navbar-height-diag-half)), var(--default-red-dark) calc(100% - var(--navbar-height-diag-half)));
+}
+
+#navbar-links a:nth-child(2) {
+    background: linear-gradient(45deg, var(--default-purple-dark) var(--navbar-height-diag-half), var(--default-red-dark) var(--navbar-height-diag-half), var(--default-red-dark) calc(100% - var(--navbar-height-diag-half)), var(--default-yellow-dark) calc(100% - var(--navbar-height-diag-half)));
+}
+
+#navbar-links a:nth-child(3) {
+    background: linear-gradient(45deg, var(--default-red-dark) var(--navbar-height-diag-half), var(--default-yellow-dark) var(--navbar-height-diag-half), var(--default-yellow-dark) calc(100% - var(--navbar-height-diag-half)), var(--default-green-dark) calc(100% - var(--navbar-height-diag-half)));
+}
+
+#navbar-links a:nth-child(4) {
+    padding-right: 1rem;
+    background: linear-gradient(45deg, var(--default-yellow-dark) var(--navbar-height-diag-half), var(--default-green-dark) var(--navbar-height-diag-half));
+}
+
+#hero {
+    background-color: var(--default-beige-light);
+    display: grid;
+    grid-template-columns: 1fr [hero-1-start] 30% [hero-1-end hero-image-start] 25% [hero-image-end hero-2-start] 30% [hero-2-end] 1fr;
+}
+
+#hero-image {
+    grid-area: hero-image;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+#hero-1 {
+    grid-area: hero-1;
+}
+
+#hero-2 {
+    grid-area: hero-2;
+}
+
+.hero-header {
+    font-family: "Phudu";
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: left;
+    margin: 0 0 1rem 0;
+}
+
+h1 {
+    font-family: "Phudu";
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: left;
+    margin: 0 0 1rem 0;
+}
+
+p {
+    margin: 0 0 1rem 0;
+}

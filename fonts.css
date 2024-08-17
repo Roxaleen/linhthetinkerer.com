@@ -1,0 +1,36 @@
+@font-face {
+    font-family: "Phudu";
+    src: url("assets/Phudu/Phudu-Regular.ttf") format("truetype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Phudu";
+    src: url("assets/Phudu/Phudu-Bold.ttf") format("truetype");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url("assets/Lato/Lato-Regular.ttf") format("truetype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url("assets/Lato/Lato-Bold.ttf") format("truetype");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url("assets/Lato/Lato-Italic.ttf") format("truetype");
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url("assets/Lato/Lato-BoldItalic.ttf") format("truetype");
+    font-weight: bold;
+    font-style: italic;
+}
