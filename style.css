@@ -83,8 +83,8 @@ body {
     grid-row: 1 / -1;
     grid-column: 1 / -1;
     margin: 2rem;
-    width: calc(100% - 2rem);
-    height: calc(100% - 2rem);
+    width: calc(100% - 4rem);
+    height: calc(100% - 4rem);
     background-color: var(--default-white);
     box-shadow: 1px 1px var(--default-black),
         2px 2px var(--default-black),
@@ -111,6 +111,7 @@ body {
 }
 
 #hero-1, #hero-2 {
+    height: 100%;
     padding: 3rem;
     display: flex;
     flex-direction: column;
