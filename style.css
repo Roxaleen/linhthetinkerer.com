@@ -155,7 +155,7 @@ p:last-child, p:only-child {
 
 #hero::after {
     content: "";
-    grid-row: 1 / -1;
+    grid-column: 1 / -1;
     background: linear-gradient(45deg,
         var(--default-black) 60%,
         var(--default-green-dark) 60%,
