@@ -87,13 +87,13 @@ body {
     height: calc(100% - 4rem);
     background-color: var(--default-white);
     border: 2px solid var(--default-black);
-    box-shadow: /*1px 1px var(--default-black),
+    box-shadow: 1px 1px var(--default-black),
         2px 2px var(--default-black),
         3px 3px var(--default-black),
         4px 4px var(--default-black),
         5px 5px var(--default-black),
         6px 6px var(--default-black),
-        7px 7px var(--default-black),*/
+        7px 7px var(--default-black),
         8px 8px var(--default-black);
 }
 
