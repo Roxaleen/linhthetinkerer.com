@@ -10,7 +10,7 @@
     --default-yellow-dark: #ed9527;
     --default-red-dark: #c60238;
     --default-green-dark: #018790;
-    --default-page-margin: 8vw;
+    --default-page-margin: 5vw;
 }
 
 body {
@@ -67,6 +67,11 @@ p:last-child, p:only-child {
     --bg-start: transparent;
     --bg-main: var(--default-green-dark);
     --bg-end: var(--default-yellow-dark);
+    background: linear-gradient(45deg,
+        var(--_bg-start) var(--navbar-height-diag),
+        var(--_bg-main) var(--navbar-height-diag),
+        var(--_bg-main) calc(100% - var(--navbar-height-diag-half)),
+        var(--_bg-end) calc(100% - var(--navbar-height-diag-half)));
 }
 
 #navbar-links a:nth-child(2) {
@@ -86,6 +91,11 @@ p:last-child, p:only-child {
     --bg-start: var(--default-red-dark);
     --bg-main: var(--default-purple-dark);
     --bg-end: transparent;
+    background: linear-gradient(45deg,
+        var(--_bg-start) var(--navbar-height-diag-half),
+        var(--_bg-main) var(--navbar-height-diag-half),
+        var(--_bg-main) calc(100% - var(--navbar-height-diag)),
+        var(--_bg-end) calc(100% - var(--navbar-height-diag)));
 }
 
 #hero {
@@ -122,22 +132,23 @@ p:last-child, p:only-child {
 
 #hero-1 {
     grid-area: hero-1;
+    padding: 0 1rem 0 2rem;
 }
 
 #hero-2 {
     grid-area: hero-2;
+    padding: 0 2rem 0 1rem;
 }
 
 #hero-1, #hero-2 {
     display: grid;
     grid-template-rows: subgrid;
-    padding: 0 1rem;
 }
 
 .hero-header {
     width: 100%;
     font-family: "Phudu";
-    font-size: clamp(1.5rem, 2rem, 2vw);
+    font-size: clamp(1.5rem, 2rem, calc(3vw - 3rem));
     font-weight: bold;
     text-align: left;
     margin: 0 0 1rem 0;
