@@ -10,7 +10,7 @@
     --default-yellow-dark: #ed9527;
     --default-red-dark: #c60238;
     --default-green-dark: #018790;
-    --default-page-margin: 5vw;
+    --default-page-margin: 8vw;
 }
 
 body {
@@ -45,63 +45,60 @@ p:last-child, p:only-child {
 }
 
 #navbar-links a {
+    --_bg-start: var(--bg-start, var(--default-beige-light));
+    --_bg-main: var(--bg-main, var(--default-beige-dark));
+    --_bg-end: var(--bg-end, var(--default-beige-light));
+    color: var(--default-white);
     font-family: "Phudu";
     text-transform: uppercase;
-    color: var(--default-white);
     display: inline-block;
     line-height: var(--navbar-height);
     padding: 0 var(--navbar-height-half);
     text-decoration: none;
+    background: linear-gradient(45deg,
+        var(--_bg-start) var(--navbar-height-diag-half),
+        var(--_bg-main) var(--navbar-height-diag-half),
+        var(--_bg-main) calc(100% - var(--navbar-height-diag-half)),
+        var(--_bg-end) calc(100% - var(--navbar-height-diag-half)));
 }
 
 #navbar-links a:first-child {
-    padding-left: var(--navbar-height-diag-half);
-    background: linear-gradient(45deg,
-        var(--default-purple-dark) calc(100% - var(--navbar-height-diag-half)),
-        var(--default-red-dark) calc(100% - var(--navbar-height-diag-half)));
+    padding-left: var(--navbar-height);
+    --bg-start: transparent;
+    --bg-main: var(--default-green-dark);
+    --bg-end: var(--default-yellow-dark);
 }
 
 #navbar-links a:nth-child(2) {
-    background: linear-gradient(45deg,
-        var(--default-purple-dark) var(--navbar-height-diag-half),
-        var(--default-red-dark) var(--navbar-height-diag-half),
-        var(--default-red-dark) calc(100% - var(--navbar-height-diag-half)),
-        var(--default-yellow-dark) calc(100% - var(--navbar-height-diag-half)));
+    --bg-start: var(--default-green-dark);
+    --bg-main: var(--default-yellow-dark);
+    --bg-end: var(--default-red-dark);
 }
 
 #navbar-links a:nth-child(3) {
-    background: linear-gradient(45deg,
-        var(--default-red-dark) var(--navbar-height-diag-half),
-        var(--default-yellow-dark) var(--navbar-height-diag-half),
-        var(--default-yellow-dark) calc(100% - var(--navbar-height-diag-half)),
-        var(--default-green-dark) calc(100% - var(--navbar-height-diag-half)));
+    --bg-start: var(--default-yellow-dark);
+    --bg-main: var(--default-red-dark);
+    --bg-end: var(--default-purple-dark);
 }
 
 #navbar-links a:nth-child(4) {
     padding-right: var(--navbar-height);
-    background: linear-gradient(45deg,
-        var(--default-yellow-dark) var(--navbar-height-diag-half),
-        var(--default-green-dark) var(--navbar-height-diag-half),
-        var(--default-green-dark) calc(100% - var(--navbar-height-diag)),
-        transparent calc(100% - var(--navbar-height-diag)));
+    --bg-start: var(--default-red-dark);
+    --bg-main: var(--default-purple-dark);
+    --bg-end: transparent;
 }
 
 #hero {
     background-color: var(--default-beige-light);
     aspect-ratio: 4 / 1;
     display: grid;
-    grid-template-columns: [hero-1-start] 1fr [hero-1-end hero-image-start] 30vw [hero-image-end hero-2-start] 1fr [hero-2-end];
-    grid-template-rows: [hero-image-start] 1fr [hero-1-start hero-2-start] auto auto [hero-1-end hero-2-end] 1fr [hero-image-end];
+    grid-template-columns: var(--default-page-margin) [border-start hero-1-start] 1fr [hero-1-end hero-image-start] 30vw [hero-image-end hero-2-start] 1fr [hero-2-end border-end] var(--default-page-margin);
+    grid-template-rows: [hero-image-start] var(--default-page-margin) [border-start] 1fr [hero-1-start hero-2-start] auto auto [hero-1-end hero-2-end] 1fr [border-end] var(--default-page-margin) [hero-image-end];
 }
 
 #hero::before {
     content: "";
-    display: inline-block;
-    grid-row: 1 / -1;
-    grid-column: 1 / -1;
-    margin: var(--default-page-margin);
-    width: calc(100% - (var(--default-page-margin) * 2));
-    height: calc(100% - (var(--default-page-margin) * 2));
+    grid-area: border;
     background-color: var(--default-white);
     border: 2px solid var(--default-black);
     box-shadow: 1px 1px var(--default-black),
@@ -125,23 +122,16 @@ p:last-child, p:only-child {
 
 #hero-1 {
     grid-area: hero-1;
-    padding-top: calc(var(--default-page-margin) + 2rem);
-    padding-right: 1rem;
-    padding-bottom: calc(var(--default-page-margin) + 2rem);
-    padding-left: calc(var(--default-page-margin) + 2rem);
 }
 
 #hero-2 {
     grid-area: hero-2;
-    padding-top: calc(var(--default-page-margin) + 2rem);
-    padding-right: calc(var(--default-page-margin) + 2rem);
-    padding-bottom: calc(var(--default-page-margin) + 2rem);
-    padding-left: 1rem;
 }
 
 #hero-1, #hero-2 {
     display: grid;
     grid-template-rows: subgrid;
+    padding: 0 1rem;
 }
 
 .hero-header {
