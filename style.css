@@ -68,8 +68,8 @@ p:last-child, p:only-child {
     --bg-main: var(--default-green-dark);
     --bg-end: var(--default-yellow-dark);
     background: linear-gradient(45deg,
-        var(--_bg-start) var(--navbar-height-diag),
-        var(--_bg-main) var(--navbar-height-diag),
+        /*var(--_bg-start) var(--navbar-height-diag),
+        var(--_bg-main) var(--navbar-height-diag),*/
         var(--_bg-main) calc(100% - var(--navbar-height-diag-half)),
         var(--_bg-end) calc(100% - var(--navbar-height-diag-half)));
 }
