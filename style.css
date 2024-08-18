@@ -74,7 +74,7 @@ body {
     aspect-ratio: 4 / 1;
     display: grid;
     grid-template-columns: [hero-1-start] 1fr [hero-1-end hero-image-start] 30vw [hero-image-end hero-2-start] 1fr [hero-2-end];
-    grid-template-rows: [hero-1-start hero-2-start hero-image-start] auto auto [hero-1-end hero-2-end hero-image-end];
+    grid-template-rows: [hero-image-start] 1fr [hero-1-start hero-2-start] auto auto [hero-1-end hero-2-end] 1fr [hero-image-end];
 }
 
 #hero::before {
