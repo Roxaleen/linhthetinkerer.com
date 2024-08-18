@@ -86,6 +86,7 @@ body {
     width: calc(100% - 4rem);
     height: calc(100% - 4rem);
     background-color: var(--default-white);
+    border: 1px solid var(--default-black);
     box-shadow: 1px 1px var(--default-black),
         2px 2px var(--default-black),
         3px 3px var(--default-black),
