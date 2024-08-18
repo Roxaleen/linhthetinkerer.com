@@ -10,6 +10,7 @@
     --default-yellow-dark: #ed9527;
     --default-red-dark: #c60238;
     --default-green-dark: #018790;
+    --default-page-margin: 2.5rem;
 }
 
 body {
@@ -33,7 +34,7 @@ p:last-child, p:only-child {
 }
 
 #navbar {
-    --navbar-height: 2.5rem;
+    --navbar-height: var(--default-page-margin);
     --navbar-height-half: calc(var(--navbar-height) / 2);
     --navbar-height-diag: calc(var(--navbar-height-half) * 1.4142);
     --navbar-height-diag-half: calc(var(--navbar-height-diag) / 2);
@@ -98,9 +99,9 @@ p:last-child, p:only-child {
     display: inline-block;
     grid-row: 1 / -1;
     grid-column: 1 / -1;
-    margin: 4rem;
-    width: calc(100% - 8rem);
-    height: calc(100% - 8rem);
+    margin: var(--default-page-margin);
+    width: calc(100% - (var(--default-page-margin) * 2));
+    height: calc(100% - (var(--default-page-margin) * 2));
     background-color: var(--default-white);
     border: 2px solid var(--default-black);
     box-shadow: 1px 1px var(--default-black),
@@ -124,12 +125,18 @@ p:last-child, p:only-child {
 
 #hero-1 {
     grid-area: hero-1;
-    padding: 6rem 1rem 6rem 6rem; 
+    padding-top: calc(var(--default-page-margin) + 2rem);
+    padding-right: 1rem;
+    padding-bottom: calc(var(--default-page-margin) + 2rem);
+    padding-left: calc(var(--default-page-margin) + 2rem);
 }
 
 #hero-2 {
     grid-area: hero-2;
-    padding: 6rem 6rem 6rem 1rem;
+    padding-top: calc(var(--default-page-margin) + 2rem);
+    padding-right: calc(var(--default-page-margin) + 2rem);
+    padding-bottom: calc(var(--default-page-margin) + 2rem);
+    padding-left: 1rem;
 }
 
 #hero-1, #hero-2 {
