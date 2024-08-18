@@ -103,7 +103,7 @@ p:last-child, p:only-child {
     min-height: 33vw;
     display: grid;
     grid-template-columns: var(--default-page-margin) [border-start hero-1-start] 1fr [hero-1-end hero-image-start] 33vw [hero-image-end hero-2-start] 1fr [hero-2-end border-end] var(--default-page-margin);
-    grid-template-rows: [hero-image-start] var(--default-page-margin) [border-start] max(1fr, 1rem) [hero-1-start hero-2-start] auto auto [hero-1-end hero-2-end] max(1fr, 1rem) [border-end] var(--default-page-margin) [hero-image-end] 8px;
+    grid-template-rows: [hero-image-start] var(--default-page-margin) [border-start] 1fr [hero-1-start hero-2-start] auto auto [hero-1-end hero-2-end] 1fr [border-end] var(--default-page-margin) [hero-image-end] 8px;
 }
 
 #hero::before {
@@ -131,12 +131,12 @@ p:last-child, p:only-child {
 
 #hero-1 {
     grid-area: hero-1;
-    padding: 0 1rem 0 2rem;
+    padding: 1rem 1rem 1rem 2rem;
 }
 
 #hero-2 {
     grid-area: hero-2;
-    padding: 0 2rem 0 1rem;
+    padding: 1rem 2rem 1rem 1rem;
 }
 
 #hero-1, #hero-2 {
