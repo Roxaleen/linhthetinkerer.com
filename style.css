@@ -124,7 +124,7 @@ body {
 .hero-header {
     width: 100%;
     font-family: "Phudu";
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 2rem, 2.5vw);
     font-weight: bold;
     text-align: left;
     margin: 0 0 1rem 0;
