@@ -73,7 +73,7 @@ body {
     background-color: var(--default-beige-light);
     aspect-ratio: 4 / 1;
     display: grid;
-    grid-template-columns: [hero-1-start] 1fr [hero-1-end hero-image-start] 25% [hero-image-end hero-2-start] 1fr [hero-2-end];
+    grid-template-columns: [hero-1-start] 1fr [hero-1-end hero-image-start] 25vw [hero-image-end hero-2-start] 1fr [hero-2-end];
     grid-template-rows: [hero-1-start hero-2-start hero-image-start] auto auto [hero-1-end hero-2-end hero-image-end];
 }
 
@@ -98,6 +98,7 @@ body {
 
 #hero-image {
     grid-area: hero-image;
+    min-height: 25vw;
     background-image: url("images/hero.png");
     background-size: contain;
     background-repeat: no-repeat;
