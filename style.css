@@ -150,14 +150,6 @@ p:last-child, p:only-child {
         8px 8px var(--default-black);
 }
 
-#hero-image {
-    grid-area: hero-image;
-    background-image: url("images/hero.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
 #hero-1 {
     grid-area: hero-1;
     padding: 1rem 1rem 1rem 2rem;
@@ -186,6 +178,22 @@ p:last-child, p:only-child {
     margin: 0 0 1rem 0;
 }
 
+#hero-image {
+    grid-area: hero-image;
+    background-image: url("images/hero.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#hero-1:hover ~ #hero-image {
+    background-image: url("images/hero-1.png");
+}
+
+#hero-2:hover ~ #hero-image {
+    background-image: url("images/hero-2.png");
+}
+
 #hero::after {
     content: "";
     grid-column: 1 / -1;
@@ -201,5 +209,5 @@ p:last-child, p:only-child {
 }
 
 .update-indicator {
-    color: steelblue;
+    color: indigo;
 }
