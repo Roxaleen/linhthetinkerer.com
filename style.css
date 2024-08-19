@@ -42,6 +42,10 @@ p:last-child, p:only-child {
     --navbar-height-half: calc(var(--navbar-height) / 2);
     --navbar-height-diag: calc(var(--navbar-height-half) * 1.4142);
     --navbar-height-diag-half: calc(var(--navbar-height-diag) / 2);
+    --navbar-purple: var(--default-purple-dark);
+    --navbar-red: var(--default-red-dark);
+    --navbar-yellow: var(--default-yellow-dark);
+    --navbar-green: var(--default-green-dark);
     background-color: var(--default-black);
     height: var(--navbar-height);
     display: flex;
@@ -50,7 +54,7 @@ p:last-child, p:only-child {
 
 #navbar-links a {
     --_bg-start: var(--bg-start, var(--default-beige-light));
-    --_bg-main: var(--bg-main, var(--default-beige-dark));
+    --_bg-main: var(--bg-main, var(--default-beige-light));
     --_bg-end: var(--bg-end, var(--default-beige-light));
     color: var(--default-white);
     font-family: "Phudu";
@@ -71,11 +75,27 @@ p:last-child, p:only-child {
         1px 1px var(--default-black);
 }
 
+#navbar-links:has(a:first-child:active) {
+    --navbar-green: var(--default-green-dark50);
+}
+
+#navbar-links:has(a:nth-child(2):active) {
+    --navbar-yellow: var(--default-yellow-dark50);
+}
+
+#navbar-links:has(a:nth-child(3):active) {
+    --navbar-red: var(--default-red-dark50);
+}
+
+#navbar-links:has(a:nth-child(4):active) {
+    --navbar-purple: var(--default-purple-dark50);
+}
+
 #navbar-links a:first-child {
     padding-left: var(--navbar-height);
     --bg-start: transparent;
-    --bg-main: var(--default-green-dark);
-    --bg-end: var(--default-yellow-dark);
+    --bg-main: var(--navbar-green);
+    --bg-end: var(--navbar-yellow);
     background: linear-gradient(45deg,
         /*var(--_bg-start) var(--navbar-height-diag),
         var(--_bg-main) var(--navbar-height-diag),*/
@@ -83,44 +103,28 @@ p:last-child, p:only-child {
         var(--_bg-end) calc(100% - var(--navbar-height-diag-half)));
 }
 
-#navbar-links a:first-child:active {
-    --bg-main: var(--default-green-dark50);
-}
-
 #navbar-links a:nth-child(2) {
-    --bg-start: var(--default-green-dark);
-    --bg-main: var(--default-yellow-dark);
-    --bg-end: var(--default-red-dark);
-}
-
-#navbar-links a:nth-child(2):active {
-    --bg-main: var(--default-yellow-dark50);
+    --bg-start: var(--navbar-green);
+    --bg-main: var(--navbar-yellow);
+    --bg-end: var(--navbar-red);
 }
 
 #navbar-links a:nth-child(3) {
-    --bg-start: var(--default-yellow-dark);
-    --bg-main: var(--default-red-dark);
-    --bg-end: var(--default-purple-dark);
-}
-
-#navbar-links a:nth-child(3):active {
-    --bg-main: var(--default-red-dark50);
+    --bg-start: var(--navbar-yellow);
+    --bg-main: var(--navbar-red);
+    --bg-end: var(--navbar-purple);
 }
 
 #navbar-links a:nth-child(4) {
     padding-right: var(--navbar-height);
-    --bg-start: var(--default-red-dark);
-    --bg-main: var(--default-purple-dark);
+    --bg-start: var(--navbar-red);
+    --bg-main: var(--navbar-purple);
     --bg-end: transparent;
     background: linear-gradient(45deg,
         var(--_bg-start) var(--navbar-height-diag-half),
         var(--_bg-main) var(--navbar-height-diag-half),
         var(--_bg-main) calc(100% - var(--navbar-height-diag)),
         var(--_bg-end) calc(100% - var(--navbar-height-diag)));
-}
-
-#navbar-links a:nth-child(4):active {
-    --bg-main: var(--default-purple-dark50);
 }
 
 #hero {
@@ -197,5 +201,5 @@ p:last-child, p:only-child {
 }
 
 .update-indicator {
-    color: purple;
+    color: steelblue;
 }
