@@ -254,6 +254,11 @@ button, a[type="button"] {
     place-content: center;
 }
 
+.card-icon img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
 .card-title, .card-description {
     text-align: center;
     margin: 0;
@@ -273,5 +278,5 @@ button, a[type="button"] {
 }
 
 .update-indicator {
-    color: royalblue;
+    color: rosybrown;
 }
