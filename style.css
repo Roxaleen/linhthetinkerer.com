@@ -103,7 +103,7 @@ p:last-child, p:only-child {
     min-height: 33vw;
     display: grid;
     grid-template-columns: var(--default-page-margin) [border-start hero-1-start] 1fr [hero-1-end hero-image-start] 33vw [hero-image-end hero-2-start] 1fr [hero-2-end border-end] var(--default-page-margin);
-    grid-template-rows: [hero-image-start] var(--default-page-margin) [border-start] 1fr [hero-1-start hero-2-start] auto auto [hero-1-end hero-2-end] 1fr [border-end] var(--default-page-margin) [hero-image-end] 8px;
+    grid-template-rows: [hero-image-start] var(--default-page-margin) [border-start hero-1-start hero-2-start] 1fr auto auto 1fr [hero-1-end hero-2-end border-end] var(--default-page-margin) [hero-image-end] 8px;
 }
 
 #hero::before {
@@ -144,6 +144,10 @@ p:last-child, p:only-child {
     grid-template-rows: subgrid;
 }
 
+#hero-1:before, #hero-1:after, #hero-2:before, #hero-2:after {
+    content: "";
+}
+
 .hero-header {
     width: 100%;
     font-family: "Phudu";
@@ -165,4 +169,8 @@ p:last-child, p:only-child {
         var(--default-red-dark) 80%,
         var(--default-red-dark) 90%,
         var(--default-purple-dark) 90%);
+}
+
+.update-indicator {
+    color: red;
 }
