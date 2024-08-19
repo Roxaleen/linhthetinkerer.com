@@ -25,7 +25,6 @@ h1 {
     font-family: "Phudu";
     font-size: 2rem;
     font-weight: bold;
-    text-align: left;
     margin: 0 0 1rem 0;
 }
 
@@ -34,6 +33,14 @@ h2 {
     font-size: 1.25rem;
     font-weight: bold;
     text-align: center;
+    margin: 0 0 1rem 0;
+}
+
+h3 {
+    font-family: "Phudu";
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0 0 1rem 0;
 }
 
 p {
@@ -42,6 +49,13 @@ p {
 
 p:last-child, p:only-child {
     margin: 0;
+}
+
+button, a[type="button"] {
+    display: inline-block;
+    padding: 0.5rem;
+    color: var(--default-white);
+    background-color: var(--default-purple-dark);
 }
 
 #navbar {
@@ -220,6 +234,35 @@ p:last-child, p:only-child {
     margin: var(--default-page-margin);
 }
 
+.preheader {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.card {
+    display: grid;
+    grid-template-rows: subgrid;
+    padding: 1rem;
+    background-color: var(--default-beige-light);
+    border: 2px solid var(--default-black);
+}
+
+.card-icon {
+    width: var(--default-page-margin);
+    height: var(--default-page-margin);
+}
+.card-title, .card-description {
+    text-align: center;
+    margin: 0;
+}
+
+.card-grid-autostack {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+}
+
 .update-indicator {
-    color: teal;
+    color: maroon;
 }
