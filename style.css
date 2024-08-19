@@ -243,13 +243,12 @@ button, a[type="button"] {
     grid-row: span 4;
     display: grid;
     grid-template-rows: subgrid;
-    padding: 1rem;
     border: 2px solid var(--default-black);
 }
 
 .card-icon {
     background-color: var(--default-beige-light);
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 1 / 1;
     display: flex;
     place-content: center;
 }
@@ -262,6 +261,14 @@ button, a[type="button"] {
 .card-title, .card-description {
     text-align: center;
     margin: 0;
+    padding: 0 1rem;
+}
+
+.card-button {
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    place-content: center;
 }
 
 .card-grid-autostack {
@@ -269,12 +276,6 @@ button, a[type="button"] {
     gap: 2rem;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, auto);
-}
-
-.card-button {
-    text-transform: uppercase;
-    font-weight: bold;
-    text-align: center;
 }
 
 .update-indicator {
