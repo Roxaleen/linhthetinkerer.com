@@ -158,7 +158,7 @@ button:active, button:focus, a[type="button"]:active, a[type="button"]:focus {
     background-color: var(--bg-normal, var(--default-beige-light));
 }
 
-#navbar-links a:nth-child(1):active::before {
+#navbar-links a:nth-child(1):active::before, #navbar-links a:nth-child(1):focus::before {
     background-color: var(--bg-active, var(--default-beige-dark));
 }
 
