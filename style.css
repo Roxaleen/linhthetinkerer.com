@@ -112,9 +112,8 @@ button, a[type="button"] {
 #navbar-links a:nth-child(1)::before {
     content: "";
     position: absolute;
+    inset: 0 0 0 calc(var(--navbar-height) * -1);
     z-index: -1;
-    left: calc(var(--navbar-height) * -1);
-    right: 0;
     background-color: var(--bg-normal, var(--default-beige-light));
 }
 
@@ -127,11 +126,11 @@ button, a[type="button"] {
     --bg-active: var(--default-yellow-dark50);
 }
 
-#navbar-links a:nth-child(1) {
+#navbar-links a:nth-child(3) {
     --bg-normal: var(--default-red-dark);
     --bg-active: var(--default-red-dark50);
 }
-#navbar-links a:nth-child(1) {
+#navbar-links a:nth-child(4) {
     --bg-normal: var(--default-purple-dark);
     --bg-active: var(--default-purple-dark50);
 }
@@ -262,5 +261,5 @@ button, a[type="button"] {
 }
 
 .update-indicator {
-    color: mediumseagreen;
+    color: darkgoldenrod;
 }
