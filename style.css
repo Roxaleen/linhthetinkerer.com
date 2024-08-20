@@ -78,8 +78,8 @@ button, a[type="button"] {
     background-color: var(--_bg-dark);
     background-image: linear-gradient(45deg,
         var(--_bg-light) var(--_diag-gradient-left),
-        transparent var(--_diag-gradient-left),
-        transparent var(--_diag-gradient-right),
+        var(--_bg-dark) var(--_diag-gradient-left),
+        var(--_bg-dark) var(--_diag-gradient-right),
         var(--_bg-light) var(--_diag-gradient-right));
     box-shadow: 1px 1px var(--default-black),
         2px 2px var(--default-black),
@@ -88,13 +88,19 @@ button, a[type="button"] {
     border: none;
 }
 
-button:hover, button:focus, a[type="button"]:hover, a[type="button"]:focus {
-    background-image: none;
-    outline: none;
+button:hover, a[type="button"]:hover {
+    background-image: linear-gradient(45deg,
+        var(--_bg-dark) var(--_diag-gradient-left),
+        var(--_bg-dark50) var(--_diag-gradient-left),
+        var(--_bg-dark50) var(--_diag-gradient-right),
+        var(--_bg-dark) var(--_diag-gradient-right));
 }
 
-button:active, a[type="button"]:active {
-    background-color: var(--_bg-dark50);
+button:active, button:focus, a[type="button"]:active, a[type="button"]:focus {
+    box-shadow: 1px 1px var(--default-black),
+        2px 2px var(--default-black),
+        3px 3px var(--default-black);
+    outline: none;
 }
 
 #navbar {
@@ -128,13 +134,13 @@ button:active, a[type="button"]:active {
     transform: skewX(45deg);
 }
 
-#navbar-links a:hover, #navbar-links a:focus {
+#navbar-links a:hover {
     text-shadow: 0.5px 0.5px var(--default-black),
         1px 1px var(--default-black);
     outline: none;
 }
 
-#navbar-links a:active::after {
+#navbar-links a:active::after, #navbar-links a:focus::after {
     background-color: var(--bg-active, var(--default-beige-dark));
 }
 
