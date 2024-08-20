@@ -18,7 +18,7 @@
     --default-green-light: #00a5a6;
     --default-green-dark: #018790;
     --default-green-dark50: #00656c;
-    --default-page-margin: 5vw;
+    --default-page-margin: max(5vw, 2rem);
 }
 
 body {
@@ -297,6 +297,7 @@ button:active, button:focus, a[type="button"]:active, a[type="button"]:focus {
 }
 
 .card-icon img {
+    width: 10rem;
     max-width: 100%;
 }
 
@@ -314,7 +315,6 @@ button:active, button:focus, a[type="button"]:active, a[type="button"]:focus {
     text-transform: uppercase;
     font-weight: bold;
     text-align: center;
-    padding-inline: 2rem;
 }
 
 .banner {
@@ -323,6 +323,10 @@ button:active, button:focus, a[type="button"]:active, a[type="button"]:focus {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.banner .display-button {
+    padding-inline: 2rem;
 }
 
 footer {
