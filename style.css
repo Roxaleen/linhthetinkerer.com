@@ -6,12 +6,16 @@
     --default-white: #fff;
     --default-beige-light: #e9e6e1;
     --default-beige-dark: #afaca9;
+    --default-purple-light: #a14a98;
     --default-purple-dark: #881d7d;
     --default-purple-dark50: #66165e;
+    --defalt-yellow-light: #fcb040;
     --default-yellow-dark: #ed9527;
     --default-yellow-dark50: #b1701e;
+    --defaul-red-light: #d23560;
     --default-red-dark: #c60238;
     --default-red-dark50: #95022a;
+    --default-green-light: #00a5a6;
     --default-green-dark: #018790;
     --default-green-dark50: #00656c;
     --default-page-margin: 5vw;
@@ -56,10 +60,41 @@ p:last-child, p:only-child {
 }
 
 button, a[type="button"] {
+    --_font-size: 0.8rem;
+    --_height: calc(var(--_font-size) * 2.25);
+    --_diag-gradient-left: calc(var(--_height) * sqrt(2) / 2);
+    --_diag-gradient-right: calc(100% - var(--_diag-gradient-left));
+    --_bg-main: var(--bg-main, var(--default-purple-light));
+    --_bg-corners: var(--bg-corners, var(--default-purple-dark));
     display: inline-block;
-    padding: 0.5rem;
     color: var(--default-white);
-    background-color: var(--default-purple-dark);
+    font-size: var(--_font-size);
+    line-height: var(--_font-size);
+    padding-inline: var(--_font-size);
+    height: var(--_height);
+    text-align: center;
+    text-decoration: none;
+    background: linear-gradient(45deg,
+        var(--_bg-corners) var(--_diag-gradient-left),
+        var(--_bg-main) var(--_diag-gradient-left),
+        var(--_bg-main) var(--_diag-gradient-right),
+        var(--_bg-corners) var(--_diag-gradient-right));
+    box-shadow: 1px 1px var(--default-black),
+        2px 2px var(--default-black),
+        3px 3px var(--default-black),
+        4px 4px var(--default-black);
+    border: none;
+}
+
+button:hover, button:focus, a[type="button"]:hover, a[type="button"]:focus {
+    --_bg-main: var(--bg-main, var(--default-purple-dark));
+    --_bg-corners: var(--bg-corners, var(--default-purple-dark50));
+    outline: none;
+}
+
+button:active, a[type="button"]:active {
+    box-shadow: none;
+    border: 2px solid var(--default-black);
 }
 
 #navbar {
@@ -221,23 +256,42 @@ button, a[type="button"] {
     margin-bottom: 0;
 }
 
+.home-card-grid {
+    --grid-gap-between: max(16px, 5vw);
+    --grid-gap-within: 1rem;
+    display: grid;
+    place-content: center;
+    gap: var(--grid-gap-within) var(--grid-gap-between);
+    grid-auto-flow: column;
+    grid-template-rows: repeat(4, auto);
+}
+
 .card {
     grid-row: span 4;
     display: grid;
     grid-template-rows: subgrid;
     border: 2px solid var(--default-black);
+    box-shadow: 1px 1px var(--default-black),
+        2px 2px var(--default-black),
+        3px 3px var(--default-black),
+        4px 4px var(--default-black),
+        5px 5px var(--default-black),
+        6px 6px var(--default-black),
+        7px 7px var(--default-black),
+        8px 8px var(--default-black);
+    max-width: 250px;
+    margin-bottom: calc(var(--grid-gap-between) - var(--grid-gap-within)); /*to add space between rows of cards when there are multiple rows*/
 }
 
 .card-icon {
     background-color: var(--default-beige-light);
-    aspect-ratio: 1 / 1;
     display: flex;
     place-content: center;
+    padding: 1rem;
 }
 
 .card-icon img {
     max-width: 100%;
-    max-height: 100%;
 }
 
 .card-title, .card-description {
@@ -250,16 +304,9 @@ button, a[type="button"] {
     text-transform: uppercase;
     font-weight: bold;
     text-align: center;
-    place-content: center;
-}
-
-.card-grid-auto-column {
-    display: grid;
-    gap: 2rem;
-    grid-auto-flow: column;
-    grid-template-rows: repeat(4, auto);
+    margin: 0 15% 1.5rem;
 }
 
 .update-indicator {
-    color: darkgoldenrod;
+    color: orchid;
 }
