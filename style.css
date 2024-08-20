@@ -313,6 +313,19 @@ button:active, button:focus, a[type="button"]:active, a[type="button"]:focus {
     margin: 0 15% 1.5rem;
 }
 
+.banner {
+    background-color: var(--default-beige-light);
+}
+
+.footer {
+    background-color: var(--default-black);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-block: 0.5rem;
+}
+
 .update-indicator {
-    color: sienna;
+    color: mediumseagreen;
 }
