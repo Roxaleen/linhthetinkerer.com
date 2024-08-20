@@ -21,6 +21,10 @@ body {
     margin: 0;
 }
 
+section {
+    padding: var(--default-page-margin);
+}
+
 h1 {
     font-family: "Phudu";
     font-size: 2rem;
@@ -61,12 +65,6 @@ button, a[type="button"] {
 #navbar {
     --navbar-height: var(--default-page-margin);
     --navbar-height-half: calc(var(--navbar-height) / 2);
-    --navbar-height-diag: calc(var(--navbar-height-half) * 1.4142);
-    --navbar-height-diag-half: calc(var(--navbar-height-diag) / 2);
-    --navbar-purple: var(--default-purple-dark);
-    --navbar-red: var(--default-red-dark);
-    --navbar-yellow: var(--default-yellow-dark);
-    --navbar-green: var(--default-green-dark);
     background-color: var(--default-black);
     height: var(--navbar-height);
     display: flex;
@@ -74,21 +72,25 @@ button, a[type="button"] {
 }
 
 #navbar-links a {
-    --_bg-start: var(--bg-start, var(--default-beige-light));
-    --_bg-main: var(--bg-main, var(--default-beige-light));
-    --_bg-end: var(--bg-end, var(--default-beige-light));
-    color: var(--default-white);
     font-family: "Phudu";
     text-transform: uppercase;
     display: inline-block;
     line-height: var(--navbar-height);
-    padding: 0 var(--navbar-height-half);
+    padding: 0;
+    margin: 0 var(--navbar-height-half);
+    color: var(--default-white);
     text-decoration: none;
-    background: linear-gradient(45deg,
-        var(--_bg-start) var(--navbar-height-diag-half),
-        var(--_bg-main) var(--navbar-height-diag-half),
-        var(--_bg-main) calc(100% - var(--navbar-height-diag-half)),
-        var(--_bg-end) calc(100% - var(--navbar-height-diag-half)));
+    position: relative;
+    isolation: isolate;
+}
+
+#navbar-links a::after{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0 calc(var(--navbar-height-half) * -1);
+    background-color: var(--bg-normal, var(--default-beige-light));
+    transform: skewX(45deg);
 }
 
 #navbar-links a:hover, #navbar-links a:focus {
@@ -97,64 +99,49 @@ button, a[type="button"] {
     outline: none;
 }
 
-#navbar-links:has(a:first-child:active) {
-    --navbar-green: var(--default-green-dark50);
+#navbar-links a:active::after {
+    background-color: var(--bg-active, var(--default-beige-dark));
 }
 
-#navbar-links:has(a:nth-child(2):active) {
-    --navbar-yellow: var(--default-yellow-dark50);
+#navbar-links a:nth-child(1) {
+    --bg-normal: var(--default-green-dark);
+    --bg-active: var(--default-green-dark50);
+    margin-left: var(--navbar-height);
 }
 
-#navbar-links:has(a:nth-child(3):active) {
-    --navbar-red: var(--default-red-dark50);
+#navbar-links a:nth-child(1)::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: calc(var(--navbar-height) * -1);
+    right: 0;
+    background-color: var(--bg-normal, var(--default-beige-light));
 }
 
-#navbar-links:has(a:nth-child(4):active) {
-    --navbar-purple: var(--default-purple-dark50);
-}
-
-#navbar-links a:first-child {
-    padding-left: var(--navbar-height);
-    --bg-start: transparent;
-    --bg-main: var(--navbar-green);
-    --bg-end: var(--navbar-yellow);
-    background: linear-gradient(45deg,
-        /*var(--_bg-start) var(--navbar-height-diag),
-        var(--_bg-main) var(--navbar-height-diag),*/
-        var(--_bg-main) calc(100% - var(--navbar-height-diag-half)),
-        var(--_bg-end) calc(100% - var(--navbar-height-diag-half)));
+#navbar-links a:nth-child(1):active::before {
+    background-color: var(--bg-active, var(--default-beige-dark));
 }
 
 #navbar-links a:nth-child(2) {
-    --bg-start: var(--navbar-green);
-    --bg-main: var(--navbar-yellow);
-    --bg-end: var(--navbar-red);
+    --bg-normal: var(--default-yellow-dark);
+    --bg-active: var(--default-yellow-dark50);
 }
 
-#navbar-links a:nth-child(3) {
-    --bg-start: var(--navbar-yellow);
-    --bg-main: var(--navbar-red);
-    --bg-end: var(--navbar-purple);
+#navbar-links a:nth-child(1) {
+    --bg-normal: var(--default-red-dark);
+    --bg-active: var(--default-red-dark50);
 }
-
-#navbar-links a:nth-child(4) {
-    padding-right: var(--navbar-height);
-    --bg-start: var(--navbar-red);
-    --bg-main: var(--navbar-purple);
-    --bg-end: transparent;
-    background: linear-gradient(45deg,
-        var(--_bg-start) var(--navbar-height-diag-half),
-        var(--_bg-main) var(--navbar-height-diag-half),
-        var(--_bg-main) calc(100% - var(--navbar-height-diag)),
-        var(--_bg-end) calc(100% - var(--navbar-height-diag)));
+#navbar-links a:nth-child(1) {
+    --bg-normal: var(--default-purple-dark);
+    --bg-active: var(--default-purple-dark50);
 }
-
 #hero {
     background-color: var(--default-beige-light);
     min-height: 33vw;
     display: grid;
     grid-template-columns: var(--default-page-margin) [border-start hero-1-start] 1fr [hero-1-end hero-image-start] 33vw [hero-image-end hero-2-start] 1fr [hero-2-end border-end] var(--default-page-margin);
     grid-template-rows: [hero-image-start] var(--default-page-margin) [border-start hero-1-start hero-2-start] 1fr auto auto 1fr [hero-1-end hero-2-end border-end] var(--default-page-margin) [hero-image-end] 8px;
+    padding: 0;
 }
 
 #hero::before {
@@ -208,11 +195,11 @@ button, a[type="button"] {
     background-position: center;
 }
 
-#hero-1:hover ~ #hero-image {
+#hero:has(#hero-1:hover) #hero-image {
     background-image: url("images/hero-1.png");
 }
 
-#hero-2:hover ~ #hero-image {
+#hero:has(#hero-2:hover) #hero-image {
     background-image: url("images/hero-2.png");
 }
 
@@ -228,10 +215,6 @@ button, a[type="button"] {
         var(--default-red-dark) 80%,
         var(--default-red-dark) 90%,
         var(--default-purple-dark) 90%);
-}
-
-.main-content {
-    margin: var(--default-page-margin);
 }
 
 .preheader {
@@ -271,13 +254,13 @@ button, a[type="button"] {
     place-content: center;
 }
 
-.card-grid-autostack {
+.card-grid-auto-column {
     display: grid;
     gap: 2rem;
-    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: column;
     grid-template-rows: repeat(4, auto);
 }
 
 .update-indicator {
-    color: rosybrown;
+    color: mediumseagreen;
 }

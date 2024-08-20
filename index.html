@@ -6,6 +6,8 @@
     <link href="fonts.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <link href="home.css" rel="stylesheet">
+    <link href="images/hero-1.png" rel="preload" as="image">
+    <link href="images/hero-2.png" rel="preload" as="image">
 </head>
 
 <body>
@@ -18,7 +20,8 @@
         </nav>
     </header>
     <main>
-        <div id="hero">
+        <section id="hero">
+            <div id="hero-image"></div>
             <div id="hero-1">
                 <h1 class="hero-header">Hello, I'm Linh…</h1>
                 <p>
@@ -36,12 +39,11 @@
                     picking up along the way.
                 </p>
             </div>
-            <div id="hero-image"></div>
-        </div>
-        <div class="main-content">
+        </section>
+        <section class="content-section">
             <p class="preheader">Here is some clever segue that I haven't come up with yet.</p>
             <h2>Here are the stuff you'll find in this website.</h2>
-            <div class="card-grid-autostack">
+            <div class="card-grid-auto-column">
                 <div class="card">
                     <div class="card-icon"><img src="images/hero-1.png"></div>
                     <h3 class="card-title">Card Title Here</h3>
@@ -61,11 +63,11 @@
                     <a class="card-button" type="button">Click to view</a>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
     <footer>
         <p class="update-indicator">
-            Last commit: 20 Aug 12:02AM
+            Last commit: 20 Aug 1:25PM
             <button onclick="location.href = location.href.split('?')[0] + '?' + new Date().getTime();">Reload</button>
         </p>
     </footer>
