@@ -64,12 +64,12 @@ button, a[type="button"] {
     --_height: calc(var(--_font-size) * 2.25);
     --_diag-gradient-left: calc(var(--_height) * sqrt(2) / 2);
     --_diag-gradient-right: calc(100% - var(--_diag-gradient-left));
-    --_bg-main: var(--bg-main, var(--default-purple-light));
-    --_bg-corners: var(--bg-corners, var(--default-purple-dark));
+    --_bg-main: var(--bg-main, var(--default-purple-dark));
+    --_bg-corners: var(--bg-corners, var(--default-purple-light));
     display: inline-block;
     color: var(--default-white);
     font-size: var(--_font-size);
-    line-height: var(--_font-size);
+    line-height: var(--_height);
     padding-inline: var(--_font-size);
     height: var(--_height);
     text-align: center;
@@ -87,14 +87,13 @@ button, a[type="button"] {
 }
 
 button:hover, button:focus, a[type="button"]:hover, a[type="button"]:focus {
-    --_bg-main: var(--bg-main, var(--default-purple-dark));
-    --_bg-corners: var(--bg-corners, var(--default-purple-dark50));
+    --_bg-main: var(--bg-main, var(--default-purple-dark50));
+    --_bg-corners: var(--bg-corners, var(--default-purple-dark));
     outline: none;
 }
 
 button:active, a[type="button"]:active {
-    box-shadow: none;
-    border: 2px solid var(--default-black);
+    background: var(--default-purple-dark50);
 }
 
 #navbar {
