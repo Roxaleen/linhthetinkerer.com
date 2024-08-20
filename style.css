@@ -64,8 +64,9 @@ button, a[type="button"] {
     --_height: calc(var(--_font-size) * 2.25);
     --_diag-gradient-left: calc(var(--_height) * sqrt(2) / 2);
     --_diag-gradient-right: calc(100% - var(--_diag-gradient-left));
-    --_bg-main: var(--bg-main, var(--default-purple-dark));
-    --_bg-corners: var(--bg-corners, var(--default-purple-light));
+    --_bg-dark50: var(--bg-dark50, var(--default-purple-dark50));
+    --_bg-dark: var(--bg-dark, var(--default-purple-dark));
+    --_bg-light: var(--bg-light, var(--default-purple-light));
     display: inline-block;
     color: var(--default-white);
     font-size: var(--_font-size);
@@ -74,11 +75,12 @@ button, a[type="button"] {
     height: var(--_height);
     text-align: center;
     text-decoration: none;
-    background: linear-gradient(45deg,
-        var(--_bg-corners) var(--_diag-gradient-left),
-        var(--_bg-main) var(--_diag-gradient-left),
-        var(--_bg-main) var(--_diag-gradient-right),
-        var(--_bg-corners) var(--_diag-gradient-right));
+    background-color: var(--_bg-dark);
+    background-image: linear-gradient(45deg,
+        var(--_bg-light) var(--_diag-gradient-left),
+        transparent var(--_diag-gradient-left),
+        transparent var(--_diag-gradient-right),
+        var(--_bg-light) var(--_diag-gradient-right));
     box-shadow: 1px 1px var(--default-black),
         2px 2px var(--default-black),
         3px 3px var(--default-black),
@@ -87,13 +89,12 @@ button, a[type="button"] {
 }
 
 button:hover, button:focus, a[type="button"]:hover, a[type="button"]:focus {
-    --_bg-main: var(--bg-main, var(--default-purple-dark50));
-    --_bg-corners: var(--bg-corners, var(--default-purple-dark));
+    background-image: none;
     outline: none;
 }
 
 button:active, a[type="button"]:active {
-    background: var(--default-purple-dark50);
+    background-color: var(--_bg-dark50);
 }
 
 #navbar {
@@ -307,5 +308,5 @@ button:active, a[type="button"]:active {
 }
 
 .update-indicator {
-    color: orchid;
+    color: sienna;
 }
