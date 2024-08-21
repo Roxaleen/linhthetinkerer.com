@@ -338,7 +338,7 @@ button:active, button:focus, a[type="button"]:active, a[type="button"]:focus {
 
 .card-icon img {
     height: 10rem;
-    width: 100%;
+    width: 10rem;
     object-fit: contain;
 }
 
