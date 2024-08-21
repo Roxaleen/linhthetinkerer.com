@@ -371,7 +371,7 @@ button:active, button:focus, a[type="button"]:active, a[type="button"]:focus {
 @media (min-width: 500px) and (max-width: 850px) {
     .home-card-grid {
         grid-auto-flow: unset;
-        grid-template-columns: 12rem max(300px, calc(85vw - 12rem));
+        grid-template-columns: 12rem max(1fr, 300px);
         grid-template-rows: 1fr auto auto auto 1fr;
     }
 
