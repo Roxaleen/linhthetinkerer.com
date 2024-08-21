@@ -175,12 +175,10 @@ button:active, button:focus, a[type="button"]:active, a[type="button"]:focus {
     --bg-normal: var(--default-purple-dark);
     --bg-active: var(--default-purple-dark50);
 }
+
 #hero {
     background-color: var(--default-beige-light);
-    min-height: 33vw;
     display: grid;
-    grid-template-columns: var(--default-page-margin) [border-start hero-1-start] 1fr [hero-1-end hero-image-start] 33vw [hero-image-end hero-2-start] 1fr [hero-2-end border-end] var(--default-page-margin);
-    grid-template-rows: [hero-image-start] var(--default-page-margin) [border-start hero-1-start hero-2-start] 1fr auto auto 1fr [hero-1-end hero-2-end border-end] var(--default-page-margin) [hero-image-end] 8px;
     padding: 0;
 }
 
@@ -201,12 +199,10 @@ button:active, button:focus, a[type="button"]:active, a[type="button"]:focus {
 
 #hero-1 {
     grid-area: hero-1;
-    padding: 1rem 1rem 1rem 2rem;
 }
 
 #hero-2 {
     grid-area: hero-2;
-    padding: 1rem 2rem 1rem 1rem;
 }
 
 #hero-1, #hero-2 {
@@ -214,14 +210,9 @@ button:active, button:focus, a[type="button"]:active, a[type="button"]:focus {
     grid-template-rows: subgrid;
 }
 
-#hero-1:before, #hero-1:after, #hero-2:before, #hero-2:after {
-    content: "";
-}
-
 .hero-header {
-    width: 100%;
     font-family: "Phudu";
-    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    font-size: 2rem;
     font-weight: bold;
     text-align: left;
     margin: 0 0 1rem 0;
@@ -245,6 +236,7 @@ button:active, button:focus, a[type="button"]:active, a[type="button"]:focus {
 
 #hero::after {
     content: "";
+    grid-row: bottom-border;
     grid-column: 1 / -1;
     background: linear-gradient(45deg,
         var(--default-black) 60%,
@@ -255,6 +247,52 @@ button:active, button:focus, a[type="button"]:active, a[type="button"]:focus {
         var(--default-red-dark) 80%,
         var(--default-red-dark) 90%,
         var(--default-purple-dark) 90%);
+}
+
+@media (max-width: 600px) {
+    #hero {
+        grid-template-columns: var(--default-page-margin) [border-start hero-image-start hero-1-start hero-2-start] 1fr [border-end hero-image-end hero-1-end hero-2-end] var(--default-page-margin);
+        grid-template-rows: [hero-image-start] var(--default-page-margin) [border-start] clamp(250px, 50vw, 500px) [hero-image-end hero-1-start] auto auto [hero-1-end hero-2-start] auto auto [hero-2-end border-end] var(--default-page-margin) [bottom-border-start] 8px [bottom-border-end];
+    }
+
+    #hero-1, #hero-2 {
+        padding: 2rem;
+    }
+
+    #hero-2 {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (min-width: 600px) {
+    #hero {
+        grid-template-columns: var(--default-page-margin) [border-start hero-1-start] 1fr [hero-image-start] 1fr [hero-1-end hero-2-start] 1fr [hero-image-end] 1fr [hero-2-end border-end] var(--default-page-margin);
+        grid-template-rows: [hero-image-start] var(--default-page-margin) [border-start] 33vw [hero-image-end hero-1-start hero-2-start] auto auto [hero-1-end hero-2-end border-end] var(--default-page-margin) [bottom-border-start] 8px [bottom-border-end];
+    }
+
+    #hero-1, #hero-2 {
+        padding: 0 2rem 2rem;
+    }
+}
+
+@media (min-width: 850px) {
+    #hero {
+        min-height: 33vw;
+        grid-template-columns: var(--default-page-margin) [border-start hero-1-start] 1fr [hero-1-end hero-image-start] 33vw [hero-image-end hero-2-start] 1fr [hero-2-end border-end] var(--default-page-margin);
+        grid-template-rows: [hero-image-start] var(--default-page-margin) [border-start hero-1-start hero-2-start] 1fr auto auto 1fr [hero-1-end hero-2-end border-end] var(--default-page-margin) [hero-image-end bottom-border-start] 8px [bottom-border-end];
+    }
+
+    #hero-1 {
+        padding: 1rem 1rem 1rem 2rem;
+    }
+
+    #hero-2 {
+        padding: 1rem 2rem 1rem 1rem;
+    }
+
+    #hero-1:before, #hero-1:after, #hero-2:before, #hero-2:after {
+        content: "";
+    }
 }
 
 .preheader {
@@ -341,5 +379,5 @@ footer {
 }
 
 .update-indicator {
-    color: mediumseagreen;
+    color: darkolivegreen;
 }
