@@ -310,7 +310,6 @@ button:active, button:focus, a[type="button"]:active, a[type="button"]:focus {
     display: grid;
     place-content: center;
     gap: var(--grid-gap-within) var(--grid-gap-between);
-    grid-auto-flow: column;
     grid-template-rows: repeat(4, auto);
 }
 
@@ -327,7 +326,6 @@ button:active, button:focus, a[type="button"]:active, a[type="button"]:focus {
         6px 6px var(--default-black),
         7px 7px var(--default-black),
         8px 8px var(--default-black);
-    max-width: 250px;
     margin-bottom: calc(var(--grid-gap-between) - var(--grid-gap-within)); /*to add space between rows of cards when there are multiple rows*/
 }
 
@@ -351,6 +349,61 @@ button:active, button:focus, a[type="button"]:active, a[type="button"]:focus {
 
 .card-button {
     margin: 0 15% 1.5rem;
+}
+
+@media (min-width: 850px){
+    .home-card-grid {
+        grid-auto-flow: column;
+    }
+    .card {
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 500px) {
+    .home-card-grid {
+        grid-template-columns: min(300px, 100%);
+    }
+    .card {
+        width: min(300px, 100%);
+    }
+}
+@media (min-width: 500px) and (max-width: 850px) {
+    .home-card-grid {
+        grid-auto-flow: unset;
+        grid-template-columns: 12rem max(300px, calc(85vw - 12rem));
+        grid-template-rows: 1fr auto auto auto 1fr;
+    }
+
+    .card {
+        grid-row: span 5;
+        grid-column: span 2;
+        grid-template-rows: subgrid;
+        grid-template-columns: subgrid;
+        grid-template-areas: 
+            'image .'
+            'image title'
+            'image description'
+            'image button'
+            'image .';
+        width: auto;
+    }
+
+    .card-icon {
+        grid-area: image;
+    }
+
+    .card-title {
+        grid-area: title;
+    }
+
+    .card-description {
+        grid-area: description;
+    }
+
+    .card-button {
+        grid-area: button;
+    }
 }
 
 .display-button {
@@ -383,5 +436,5 @@ footer {
 }
 
 .update-indicator {
-    color: deeppink;
+    color: mediumvioletred;
 }
