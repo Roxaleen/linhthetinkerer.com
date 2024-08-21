@@ -255,12 +255,12 @@ button:active, button:focus, a[type="button"]:active, a[type="button"]:focus {
         grid-template-rows: [hero-image-start] var(--default-page-margin) [border-start] clamp(250px, 50vw, 500px) [hero-image-end hero-1-start] auto auto [hero-1-end hero-2-start] auto auto [hero-2-end border-end] var(--default-page-margin) [bottom-border-start] 8px [bottom-border-end];
     }
 
-    #hero-1, #hero-2 {
-        padding: 2rem;
+    #hero-1 {
+        padding: 1rem 2rem 2rem 2rem;
     }
 
     #hero-2 {
-        margin-bottom: 2rem;
+        padding: 0 2rem 2.5rem 2rem;
     }
 }
 
@@ -270,8 +270,12 @@ button:active, button:focus, a[type="button"]:active, a[type="button"]:focus {
         grid-template-rows: [hero-image-start] var(--default-page-margin) [border-start] 33vw [hero-image-end hero-1-start hero-2-start] auto auto [hero-1-end hero-2-end border-end] var(--default-page-margin) [bottom-border-start] 8px [bottom-border-end];
     }
 
-    #hero-1, #hero-2 {
-        padding: 0 2rem 2rem;
+    #hero-1 {
+        padding: 0.5rem 1.5rem 2rem 2rem;
+    }
+
+    #hero-2 {
+        padding: 0.5rem 2rem 2rem 1.5rem;
     }
 }
 
