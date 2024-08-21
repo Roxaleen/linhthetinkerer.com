@@ -314,7 +314,6 @@ button:active, button:focus, a[type="button"]:active, a[type="button"]:focus {
 }
 
 .card {
-    grid-row: span 4;
     display: grid;
     grid-template-rows: subgrid;
     border: 2px solid var(--default-black);
@@ -357,6 +356,7 @@ button:active, button:focus, a[type="button"]:active, a[type="button"]:focus {
         grid-auto-flow: column;
     }
     .card {
+        grid-row: span 4;
         max-width: 250px;
     }
 }
@@ -366,6 +366,7 @@ button:active, button:focus, a[type="button"]:active, a[type="button"]:focus {
         grid-template-columns: min(300px, 100%);
     }
     .card {
+        grid-row: span 4;
         width: min(300px, 100%);
     }
 }
@@ -437,5 +438,5 @@ footer {
 }
 
 .update-indicator {
-    color: mintcream;
+    color: mediumaquamarine;
 }
