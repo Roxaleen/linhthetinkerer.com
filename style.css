@@ -372,7 +372,6 @@ button:active, a[type="button"]:active {
     .home-card-grid {
         grid-auto-flow: unset;
         grid-template-columns: 12rem min(300px, 1fr);
-        grid-template-rows: 1fr auto auto auto 1fr;
         column-gap: 0;
     }
 
