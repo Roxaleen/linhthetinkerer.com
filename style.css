@@ -103,6 +103,43 @@ button:active, a[type="button"]:active {
     outline: none;
 }
 
+.logo {
+    --logo-color: #fff;
+    --logo-bg-color: #000;
+    --logo-font-size: 1rem;
+    font-size: var(--logo-font-size);
+  }
+  
+  .logo::before {
+    content: "Linh";
+    font-weight: bold;
+    color: var(--logo-bg-color);
+    background-image: linear-gradient(45deg, var(--logo-color) 60%, transparent 60%);
+    padding: calc(var(--logo-font-size) * 0.25);
+    padding-right: calc(var(--logo-font-size) * 2);
+    border: calc(var(--logo-font-size) / 16) solid var(--logo-color);
+    border-right: none;
+  }
+  
+  .logo::after {
+    content: "Tinkerer";
+    color: var(--logo-color);
+    padding: calc(var(--logo-font-size) * 0.25);
+    margin-left: calc(var(--logo-font-size) * -1.6);
+    border: calc(var(--logo-font-size) / 16) solid var(--logo-color);
+    border-left: none;
+  }
+  
+  .diagonal-slash {
+    --slash-size: var(--font-size, 1rem);
+    display: inline-block;
+    height: var(--font-size);
+    width: calc(var(--font-size) / 8);
+    margin-inline: calc(var(--font-size) / 2);
+    background-color: var(--color-slash);
+    transform: skewX(45deg);
+}
+
 #navbar {
     --navbar-height: var(--default-page-margin);
     --navbar-height-half: calc(var(--navbar-height) / 2);
@@ -434,35 +471,6 @@ footer {
     padding-block: 0.5rem;
 }
 
-.logo {
-    --color-front: var(--default-beige-light);
-    --color-back: var(--default-beige-light);
-    --color-slash: var(--default-purple-dark);
-    --font-size: 1rem;
-    text-decoration: none;
-}
-
-.logo span:first-child {
-    color: var(--color-front);
-    font-size: var(--font-size);
-    font-weight: bold;
-}
-
-.logo span:last-child {
-    color: var(--color-back);
-    font-size: var(--font-size);
-}
-
-.diagonal-slash {
-    --slash-size: var(--font-size, 1rem);
-    display: inline-block;
-    height: var(--font-size);
-    width: calc(var(--font-size) / 8);
-    margin-inline: calc(var(--font-size) / 2);
-    background-color: var(--color-slash);
-    transform: skewX(45deg);
-}
-
 .update-indicator {
-    color: peachpuff;
+    color: peru;
 }
