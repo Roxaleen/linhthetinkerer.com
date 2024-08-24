@@ -18,7 +18,7 @@
     --default-green-light: #00a5a6;
     --default-green-dark: #018790;
     --default-green-dark50: #00656c;
-    --default-page-margin: max(5vw, 2rem);
+    --default-page-margin: max(5vw, 2.5rem);
 }
 
 body {
@@ -109,7 +109,18 @@ button:active, a[type="button"]:active {
     background-color: var(--default-black);
     height: var(--navbar-height);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    position: relative;
+    isolation: isolate;
+}
+
+#navbar-logo {
+    position: absolute;
+    inset-block: 0;
+    left: var(--default-page-margin);
+    z-index: -1;
+    display: flex;
+    align-items: center;
 }
 
 #navbar-links a {
@@ -146,19 +157,6 @@ button:active, a[type="button"]:active {
 #navbar-links a:nth-child(1) {
     --bg-normal: var(--default-green-dark);
     --bg-dark: var(--default-green-dark50);
-    margin-left: var(--navbar-height);
-}
-
-#navbar-links a:nth-child(1)::before {
-    content: "";
-    position: absolute;
-    inset: 0 0 0 calc(var(--navbar-height) * -1);
-    z-index: -1;
-    background-color: var(--bg-normal, var(--default-beige-light));
-}
-
-#navbar-links a:nth-child(1):hover::before, #navbar-links a:nth-child(1):focus::before {
-    background-color: var(--bg-dark, var(--default-beige-dark));
 }
 
 #navbar-links a:nth-child(2) {
@@ -436,6 +434,34 @@ footer {
     padding-block: 0.5rem;
 }
 
+.logo {
+    --color-front: var(--default-beige-light);
+    --color-back: var(--default-beige-light);
+    --color-slash: var(--default-purple-dark);
+    --font-size: 1rem;
+}
+
+.logo span:first-child {
+    color: var(--color-front);
+    font-size: var(--font-size);
+    font-weight: bold;
+}
+
+.logo span:last-child {
+    color: var(--color-back);
+    font-size: var(--font-size);
+}
+
+.diagonal-slash {
+    --slash-size: var(--font-size, 1rem);
+    display: inline-block;
+    height: var(--font-size);
+    width: calc(var(--font-size) / 8);
+    padding-inline: calc(var(--font-size) / 2);
+    background-color: var(--color-slash);
+    transform: skewX(45deg);
+}
+
 .update-indicator {
-    color: yellowgreen;
+    color: peachpuff;
 }

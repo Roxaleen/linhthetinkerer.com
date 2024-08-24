@@ -14,10 +14,14 @@
 <body>
     <header>
         <nav id="navbar">
+            <a id="navbar-logo" class="logo" aria-label="logo" href="#">
+                <span>linh</span>
+                <span class="diagonal-slash"></span>
+                <span>tinkerer</span>
+            </a>
             <div id="navbar-links">
                 <a href="#">Home</a><a href="#">Tinker Space</a><a href="#">Resources</a><a href="#">Contact</a>
             </div>
-            <div id="navbar-logo"></div>
         </nav>
     </header>
     <main>
@@ -72,7 +76,7 @@
     </main>
     <footer>
         <p class="update-indicator">
-            Last commit: 24 Aug 10:49AM
+            Last commit: 24 Aug 12:40PM
         </p>
         <button onclick="location.href = location.href.split('?')[0] + '?' + new Date().getTime();">Reload</button>
     </footer>
