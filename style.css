@@ -457,7 +457,7 @@ footer {
     display: inline-block;
     height: var(--font-size);
     width: calc(var(--font-size) / 8);
-    padding-inline: calc(var(--font-size) / 2);
+    margin-inline: calc(var(--font-size) / 2);
     background-color: var(--color-slash);
     transform: skewX(45deg);
 }
