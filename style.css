@@ -439,6 +439,7 @@ footer {
     --color-back: var(--default-beige-light);
     --color-slash: var(--default-purple-dark);
     --font-size: 1rem;
+    text-decoration: none;
 }
 
 .logo span:first-child {
