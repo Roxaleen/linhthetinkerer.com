@@ -310,7 +310,6 @@ button:active, button:focus, a[type="button"]:active, a[type="button"]:focus {
     display: grid;
     place-content: center;
     gap: var(--grid-gap-within) var(--grid-gap-between);
-    grid-template-rows: repeat(4, auto);
 }
 
 .card {
@@ -356,8 +355,7 @@ button:active, button:focus, a[type="button"]:active, a[type="button"]:focus {
         grid-auto-flow: column;
     }
     .card {
-        grid-row: span 4;
-        max-width: 250px;
+        width: max(1fr, 300px);
     }
 }
 
@@ -366,10 +364,10 @@ button:active, button:focus, a[type="button"]:active, a[type="button"]:focus {
         grid-template-columns: min(300px, 100%);
     }
     .card {
-        grid-row: span 4;
         width: min(300px, 100%);
     }
 }
+
 @media (min-width: 500px) and (max-width: 850px) {
     .home-card-grid {
         grid-auto-flow: unset;
@@ -438,5 +436,5 @@ footer {
 }
 
 .update-indicator {
-    color: mediumaquamarine;
+    color: rebeccapurple;
 }
