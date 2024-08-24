@@ -59,7 +59,7 @@ p:last-child, p:only-child {
     margin: 0;
 }
 
-button, a[type="button"] {
+button, [type="button"] {
     --_font-size: 0.8rem;
     --_height: calc(var(--_font-size) * 2.25);
     --_diag-gradient-left: calc(var(--_height) * sqrt(2) / 2);
@@ -74,7 +74,6 @@ button, a[type="button"] {
     padding-inline: var(--_font-size);
     height: var(--_height);
     text-align: center;
-    text-decoration: none;
     background-color: var(--_bg-dark);
     background-image: linear-gradient(45deg,
         var(--_bg-light) var(--_diag-gradient-left),
@@ -88,7 +87,7 @@ button, a[type="button"] {
     border: none;
 }
 
-button:hover, button:focus, a[type="button"]:hover, a[type="button"]:focus {
+button:hover, button:focus, [type="button"]:hover, [type="button"]:focus {
     background-image: linear-gradient(45deg,
         var(--_bg-dark) var(--_diag-gradient-left),
         var(--_bg-dark50) var(--_diag-gradient-left),
@@ -96,11 +95,15 @@ button:hover, button:focus, a[type="button"]:hover, a[type="button"]:focus {
         var(--_bg-dark) var(--_diag-gradient-right));
 }
 
-button:active, a[type="button"]:active {
+button:active, [type="button"]:active {
     box-shadow: 1px 1px var(--default-black),
         2px 2px var(--default-black),
         3px 3px var(--default-black);
     outline: none;
+}
+
+a {
+    text-decoration: none;
 }
 
 .logo {
