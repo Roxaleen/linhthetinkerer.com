@@ -88,7 +88,7 @@ button, a[type="button"] {
     border: none;
 }
 
-button:hover, a[type="button"]:hover {
+button:hover, button:focus, a[type="button"]:hover, a[type="button"]:focus {
     background-image: linear-gradient(45deg,
         var(--_bg-dark) var(--_diag-gradient-left),
         var(--_bg-dark50) var(--_diag-gradient-left),
@@ -96,7 +96,7 @@ button:hover, a[type="button"]:hover {
         var(--_bg-dark) var(--_diag-gradient-right));
 }
 
-button:active, button:focus, a[type="button"]:active, a[type="button"]:focus {
+button:active, a[type="button"]:active {
     box-shadow: 1px 1px var(--default-black),
         2px 2px var(--default-black),
         3px 3px var(--default-black);
@@ -128,25 +128,24 @@ button:active, button:focus, a[type="button"]:active, a[type="button"]:focus {
 #navbar-links a::after{
     content: "";
     position: absolute;
-    z-index: -1;
+    z-index: -2;
     inset: 0 calc(var(--navbar-height-half) * -1);
     background-color: var(--bg-normal, var(--default-beige-light));
     transform: skewX(45deg);
 }
 
-#navbar-links a:hover {
-    text-shadow: 0.5px 0.5px var(--default-black),
-        1px 1px var(--default-black);
+#navbar-links a:hover::after, #navbar-links a:focus::after {
+    background-color: var(--bg-dark, var(--default-beige-dark));
     outline: none;
 }
 
-#navbar-links a:active::after, #navbar-links a:focus::after {
-    background-color: var(--bg-active, var(--default-beige-dark));
+#navbar-links a:active::after {
+    box-shadow: inset 2px 2px rgba(0,0,0,0.25);
 }
 
 #navbar-links a:nth-child(1) {
     --bg-normal: var(--default-green-dark);
-    --bg-active: var(--default-green-dark50);
+    --bg-dark: var(--default-green-dark50);
     margin-left: var(--navbar-height);
 }
 
@@ -158,22 +157,26 @@ button:active, button:focus, a[type="button"]:active, a[type="button"]:focus {
     background-color: var(--bg-normal, var(--default-beige-light));
 }
 
-#navbar-links a:nth-child(1):active::before, #navbar-links a:nth-child(1):focus::before {
-    background-color: var(--bg-active, var(--default-beige-dark));
+#navbar-links a:nth-child(1):hover::before, #navbar-links a:nth-child(1):focus::before {
+    background-color: var(--bg-dark, var(--default-beige-dark));
+}
+
+#navbar-links a:nth-child(1):active::before {
+    box-shadow: inset 2px 2px rgba(0,0,0,0.25);
 }
 
 #navbar-links a:nth-child(2) {
     --bg-normal: var(--default-yellow-dark);
-    --bg-active: var(--default-yellow-dark50);
+    --bg-dark: var(--default-yellow-dark50);
 }
 
 #navbar-links a:nth-child(3) {
     --bg-normal: var(--default-red-dark);
-    --bg-active: var(--default-red-dark50);
+    --bg-dark: var(--default-red-dark50);
 }
 #navbar-links a:nth-child(4) {
     --bg-normal: var(--default-purple-dark);
-    --bg-active: var(--default-purple-dark50);
+    --bg-dark: var(--default-purple-dark50);
 }
 
 #hero {
@@ -437,5 +440,5 @@ footer {
 }
 
 .update-indicator {
-    color: skyblue;
+    color: lightgoldenrodyellow;
 }
