@@ -128,7 +128,7 @@ button:active, a[type="button"]:active {
 #navbar-links a::after{
     content: "";
     position: absolute;
-    z-index: -2;
+    z-index: -1;
     inset: 0 calc(var(--navbar-height-half) * -1);
     background-color: var(--bg-normal, var(--default-beige-light));
     transform: skewX(45deg);
@@ -139,8 +139,8 @@ button:active, a[type="button"]:active {
     outline: none;
 }
 
-#navbar-links a:active::after {
-    box-shadow: inset 2px 2px rgba(0,0,0,0.25);
+#navbar-links a:active {
+    text-shadow: 1px 1px var(--default-black);
 }
 
 #navbar-links a:nth-child(1) {
@@ -159,10 +159,6 @@ button:active, a[type="button"]:active {
 
 #navbar-links a:nth-child(1):hover::before, #navbar-links a:nth-child(1):focus::before {
     background-color: var(--bg-dark, var(--default-beige-dark));
-}
-
-#navbar-links a:nth-child(1):active::before {
-    box-shadow: inset 2px 2px rgba(0,0,0,0.25);
 }
 
 #navbar-links a:nth-child(2) {
@@ -350,7 +346,7 @@ button:active, a[type="button"]:active {
 }
 
 .card-button {
-    margin: 0 15% 1.5rem;
+    margin: 0.5rem 15% 1.5rem;
 }
 
 @media (min-width: 850px){
@@ -377,6 +373,7 @@ button:active, a[type="button"]:active {
         grid-auto-flow: unset;
         grid-template-columns: 12rem min(300px, 1fr);
         grid-template-rows: 1fr auto auto auto 1fr;
+        column-gap: 0;
     }
 
     .card {
@@ -407,6 +404,7 @@ button:active, a[type="button"]:active {
 
     .card-button {
         grid-area: button;
+        margin-bottom: 0.5rem;
     }
 }
 
@@ -440,5 +438,5 @@ footer {
 }
 
 .update-indicator {
-    color: lightgoldenrodyellow;
+    color: yellowgreen;
 }
