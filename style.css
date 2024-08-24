@@ -104,8 +104,8 @@ button:active, a[type="button"]:active {
 }
 
 .logo {
-    --logo-color: #fff;
-    --logo-bg-color: #000;
+    --logo-color: var(--default-beige-light);
+    --logo-bg-color: var(--default-black);
     --logo-font-size: 1rem;
     font-size: var(--logo-font-size);
   }
@@ -131,12 +131,13 @@ button:active, a[type="button"]:active {
   }
   
   .diagonal-slash {
-    --slash-size: var(--font-size, 1rem);
+    --slash-size: 1rem;
+    --slash-color: var(--default-purple-dark);
     display: inline-block;
-    height: var(--font-size);
-    width: calc(var(--font-size) / 8);
-    margin-inline: calc(var(--font-size) / 2);
-    background-color: var(--color-slash);
+    height: var(--slash-size);
+    width: calc(var(--slash-size) / 8);
+    margin-inline: calc(var(--slash-size) / 2);
+    background-color: var(--slash-color);
     transform: skewX(45deg);
 }
 
@@ -472,5 +473,5 @@ footer {
 }
 
 .update-indicator {
-    color: peru;
+    color: paleturquoise;
 }
