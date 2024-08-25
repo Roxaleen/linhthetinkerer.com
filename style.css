@@ -84,6 +84,7 @@ button, [type="button"] {
         3px 3px var(--default-black),
         4px 4px var(--default-black);
     border: none;
+    text-decoration: none;
 }
 
 button:hover, button:focus, [type="button"]:hover, [type="button"]:focus {
@@ -122,7 +123,7 @@ a:not(.style-reset, [type="button"]):hover::before, a:not(.style-reset):focus::b
     width: 100%;
 }
 
-a:not(.style-reset):active {
+a:not(.style-reset, [type="button"]):active {
     color: var(--link-active-color);
     outline: none;
 }
@@ -136,7 +137,6 @@ a:not(.style-reset):active {
     height: var(--logo-size);
     font-size: var(--logo-font-size);
     font-family: "Phudu";
-    color: var(--logo-color);
     background-color: var(--logo-color);
     outline: 2px solid var(--logo-shadow-color);
     outline-offset: -2px;
@@ -153,12 +153,14 @@ a:not(.style-reset):active {
 
   .logo::before {
     content: "Linh";
+    color: var(--logo-color);
     font-weight: bold;
     top: -15%;
   }
   
   .logo::after {
     content: "tinkerer";
+    color: var(--logo-shadow-color);
     font-size: calc(var(--logo-font-size) * 0.75);
     bottom: -20%;
   }
