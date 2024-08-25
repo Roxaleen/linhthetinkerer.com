@@ -196,22 +196,22 @@ a {
 }
 
 #navbar-links a:nth-child(1) {
-    --bg-normal: var(--default-green-dark);
-    --bg-dark: var(--default-green-dark50);
+    --bg-normal: var(--default-purple-dark);
+    --bg-dark: var(--default-purple-dark50);
 }
 
 #navbar-links a:nth-child(2) {
-    --bg-normal: var(--default-yellow-dark);
-    --bg-dark: var(--default-yellow-dark50);
-}
-
-#navbar-links a:nth-child(3) {
     --bg-normal: var(--default-red-dark);
     --bg-dark: var(--default-red-dark50);
 }
+
+#navbar-links a:nth-child(3) {
+    --bg-normal: var(--default-yellow-dark);
+    --bg-dark: var(--default-yellow-dark50);
+}
 #navbar-links a:nth-child(4) {
-    --bg-normal: var(--default-purple-dark);
-    --bg-dark: var(--default-purple-dark50);
+    --bg-normal: var(--default-green-dark);
+    --bg-dark: var(--default-green-dark50);
 }
 
 #hero {
@@ -278,13 +278,13 @@ a {
     grid-column: 1 / -1;
     background: linear-gradient(45deg,
         var(--default-black) 60%,
-        var(--default-green-dark) 60%,
-        var(--default-green-dark) 70%,
-        var(--default-yellow-dark) 70%,
-        var(--default-yellow-dark) 80%,
+        var(--default-purple-dark) 60%,
+        var(--default-purple-dark) 70%,
+        var(--default-red-dark) 70%,
         var(--default-red-dark) 80%,
-        var(--default-red-dark) 90%,
-        var(--default-purple-dark) 90%);
+        var(--default-yellow-dark) 80%,
+        var(--default-yellow-dark) 90%,
+        var(--default-green-dark) 90%);
 }
 
 @media (max-width: 600px) {
@@ -476,5 +476,5 @@ footer {
 }
 
 .update-indicator {
-    color: paleturquoise;
+    color: lightseagreen;
 }
