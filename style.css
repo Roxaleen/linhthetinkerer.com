@@ -67,8 +67,9 @@ button, [type="button"] {
     --_bg-dark50: var(--bg-dark50, var(--default-purple-dark50));
     --_bg-dark: var(--bg-dark, var(--default-purple-dark));
     --_bg-light: var(--bg-light, var(--default-purple-light));
+    --link-color: var(--default-white);
+    --link-active-color: var(--default-white);
     display: inline-block;
-    color: var(--default-white);
     font-size: var(--_font-size);
     line-height: var(--_height);
     padding-inline: var(--_font-size);
@@ -100,14 +101,14 @@ button:active, [type="button"]:active {
     outline: none;
 }
 
-a {
+a:not(.style-reset) {
     --link-color: var(--default-purple-light);
     --link-active-color: var(--default-purple-dark);
     color: var(--link-color);
     text-decoration: none;
 }
 
-a::before {
+a:not(.style-reset)::before {
     content: "";
     position: absolute;
     left: 0;
@@ -118,11 +119,11 @@ a::before {
     transition: width 1s;
 }
 
-a:hover::before, a:focus::before {
+a:not(.style-reset):hover::before, a:not(.style-reset):focus::before {
     width: 100%;
 }
 
-a:active {
+a:not(.style-reset):active {
     color: var(--link-active-color);
     outline: none;
 }
@@ -217,6 +218,15 @@ a:active {
 
 #navbar-links a:active::after {
     background-color: var(--bg-dark, var(--default-beige-dark));
+}
+
+#navbar-links a::before {
+    top: calc(50% + 0.75rem);
+    transform: skewX(45deg);
+}
+
+#navbar-links a:hover::before, #navbar-links a:focus::before {
+    width: calc(100% + var(--navbar-height-half));
 }
 
 #navbar-links a:nth-child(1) {
@@ -498,5 +508,5 @@ footer {
 }
 
 .update-indicator {
-    color: var(--default-yellow-light);
+    color: var(--default-red-light);
 }
