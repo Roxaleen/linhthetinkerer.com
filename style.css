@@ -73,7 +73,7 @@ button, [type="button"] {
     padding-inline: var(--_font-size);
     height: var(--_height);
     text-align: center;
-    color: var(--default-white) !important;
+    color: var(--default-white);
     background-color: var(--_bg-dark);
     background-image: linear-gradient(45deg,
         var(--_bg-light) var(--_diag-gradient-left),
@@ -100,14 +100,14 @@ button:active, [type="button"]:active {
     outline: none;
 }
 
-a:not(.style-reset) {
+a:not(.style-reset, [type="button"]) {
     --link-color: var(--default-purple-light);
     --link-active-color: var(--default-purple-dark);
     color: var(--link-color);
     text-decoration: none;
 }
 
-a:not(.style-reset)::before {
+a:not(.style-reset, [type="button"])::before {
     content: "";
     position: absolute;
     left: 0;
@@ -118,7 +118,7 @@ a:not(.style-reset)::before {
     transition: width 1s;
 }
 
-a:not(.style-reset):hover::before, a:not(.style-reset):focus::before {
+a:not(.style-reset, [type="button"]):hover::before, a:not(.style-reset):focus::before {
     width: 100%;
 }
 
