@@ -98,7 +98,6 @@ button:active, [type="button"]:active {
     box-shadow: 1px 1px var(--default-black),
         2px 2px var(--default-black),
         3px 3px var(--default-black);
-    outline: none;
 }
 
 a:not(.style-reset, [type="button"]) {
@@ -125,6 +124,9 @@ a:not(.style-reset, [type="button"]):hover::before, a:not(.style-reset):focus::b
 
 a:not(.style-reset, [type="button"]):active {
     color: var(--link-active-color);
+}
+
+*:focus {
     outline: none;
 }
 
