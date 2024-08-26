@@ -13,11 +13,17 @@
 
 <body>
     <header>
+        <a id="navbar-logo" class="logo style-reset" aria-label="logo" href="#"></a>
         <nav id="navbar">
-            <a id="navbar-logo" class="logo style-reset" aria-label="logo" href="#"></a>
-            <div id="navbar-links">
-                <a href="#">Home</a><a href="#">Tinker Space</a><a href="#">Resources</a><a href="#">Contact</a>
-            </div>
+            <button id="nav-menu-toggle" aria-label="menu" aria-controls="navbar-links">
+                <div class="hamburger"></div>
+            </button>
+            <ul id="navbar-links" aria-expanded="false">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Tinker Space</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
         </nav>
     </header>
     <main>
@@ -49,30 +55,30 @@
                     <div class="card-icon"><img src="images/hero-1.png"></div>
                     <h3 class="card-title">Card Title Here</h3>
                     <p class="card-description">Here's some cool description text.</p>
-                    <a class="card-button display-button" href="#" role="button">Click to view</a>
+                    <a class="button card-button display-button" href="#">Click to view</a>
                 </div>
                 <div class="card">
                     <div class="card-icon"><img src="images/hero.png"></div>
                     <h3 class="card-title">Card Title Here</h3>
                     <p class="card-description">Here's some cool description text.</p>
-                    <a class="card-button display-button" href="#" role="button">Click to view</a>
+                    <a class="button card-button display-button" href="#">Click to view</a>
                 </div>
                 <div class="card">
                     <div class="card-icon"><img src="images/hero-2.png"></div>
                     <h3 class="card-title">Card Title Here</h3>
                     <p class="card-description">Here's some cool description text.</p>
-                    <a class="card-button display-button" href="#" role="button">Click to view</a>
+                    <a class="button card-button display-button" href="#">Click to view</a>
                 </div>
             </div>
         </section>
         <section class="banner" aria-label="contact">
             <h2>Questions&nbsp;<span class="diagonal-slash"></span>&nbsp;comments&nbsp;<span class="diagonal-slash"></span>&nbsp;suggestions</h2>
-            <a class="display-button" href="#" role="button">Contact me</a>
+            <a class="button display-button" href="#">Contact me</a>
         </section>
     </main>
     <footer>
         <p class="update-indicator">
-            Last commit: 26 Aug 12:49AM
+            Last commit: 26 Aug 11:16PM
         </p>
         <button onclick="location.href = location.href.split('?')[0] + '?' + new Date().getTime();">Reload</button>
     </footer>
