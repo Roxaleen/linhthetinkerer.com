@@ -274,6 +274,7 @@ header {
 
     #navbar-links {
         display: flex;
+        justify-content: center;
     }
 
     #navbar-links a {
