@@ -330,7 +330,7 @@ header:has(#nav-menu-toggle:checked) {
         text-align: center;
     }
 
-    #navbar-link li {
+    #navbar-links li {
         padding: 0;
     }
 
