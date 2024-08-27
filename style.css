@@ -273,7 +273,8 @@ header:has(#nav-menu-toggle:checked) {
     inset-inline: 0;
     top: var(--navbar-height);
     height: calc(100dvh - var(--navbar-height));
-    background: linear-gradient(-90deg, var(--default-black) 10%, transparent);
+    background-color: var(--default-purple-dark50);
+    opacity: 0.5;
     z-index: -2;
 }
 
