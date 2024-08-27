@@ -315,18 +315,23 @@ header:has(#nav-menu-toggle:checked) {
         display: flex;
         justify-content: center;    
     }
-
-    #navbar {
-        height: 100%;
-    }
     
     #nav-menu-button {
         display: none;
     }
 
     #navbar-links {
+        position: unset;
+        height: var(--navbar-height);
         display: flex;
         justify-content: center;
+        padding: 0;
+        background: transparent;
+        text-align: center;
+    }
+
+    #navbar-link li {
+        padding: 0;
     }
 
     #navbar-links a {
@@ -362,21 +367,21 @@ header:has(#nav-menu-toggle:checked) {
         width: calc(100% + var(--navbar-height-half));
     }
     
-    #navbar-links a:nth-child(1) {
+    #navbar-links li:nth-child(1) a {
         --bg-normal: var(--default-purple-dark);
         --bg-dark: var(--default-purple-dark50);
     }
     
-    #navbar-links a:nth-child(2) {
+    #navbar-links li:nth-child(2) a {
         --bg-normal: var(--default-red-dark);
         --bg-dark: var(--default-red-dark50);
     }
     
-    #navbar-links a:nth-child(3) {
+    #navbar-links li:nth-child(3) a {
         --bg-normal: var(--default-yellow-dark);
         --bg-dark: var(--default-yellow-dark50);
     }
-    #navbar-links a:nth-child(4) {
+    #navbar-links li:nth-child(4) a {
         --bg-normal: var(--default-green-dark);
         --bg-dark: var(--default-green-dark50);
     }    
@@ -642,5 +647,5 @@ footer {
 }
 
 .update-indicator {
-    color: magenta;
+    color: gold;
 }
