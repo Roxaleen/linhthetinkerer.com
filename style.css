@@ -458,19 +458,17 @@ header:has(#nav-menu-toggle:checked) {
         var(--default-green-dark) 90%);
 }
 
-@media (max-width: 600px) {
-    #hero {
-        grid-template-columns: var(--default-page-margin) [border-start hero-image-start hero-1-start hero-2-start] 1fr [border-end hero-image-end hero-1-end hero-2-end] var(--default-page-margin);
-        grid-template-rows: [hero-image-start] var(--default-page-margin) [border-start] clamp(250px, 50vw, 500px) [hero-image-end hero-1-start] auto auto [hero-1-end hero-2-start] auto auto [hero-2-end border-end] var(--default-page-margin) [bottom-border-start] 8px [bottom-border-end];
-    }
+#hero {
+    grid-template-columns: var(--default-page-margin) [border-start hero-image-start hero-1-start hero-2-start] 1fr [border-end hero-image-end hero-1-end hero-2-end] var(--default-page-margin);
+    grid-template-rows: [hero-image-start] var(--default-page-margin) [border-start] clamp(250px, 50vw, 500px) [hero-image-end hero-1-start] auto auto [hero-1-end hero-2-start] auto auto [hero-2-end border-end] var(--default-page-margin) [bottom-border-start] 8px [bottom-border-end];
+}
 
-    #hero-1 {
-        padding: 1rem 2rem 2rem 2rem;
-    }
+#hero-1 {
+    padding: 1rem 2rem 2rem 2rem;
+}
 
-    #hero-2 {
-        padding: 0 2rem 2.5rem 2rem;
-    }
+#hero-2 {
+    padding: 0 2rem 2.5rem 2rem;
 }
 
 @media (min-width: 600px) {
@@ -559,22 +557,17 @@ header:has(#nav-menu-toggle:checked) {
     margin: 0.5rem 15% 1.5rem;
 }
 
+.home-card-grid {
+    grid-template-columns: min(300px, 1fr);
+}
+.card {
+    grid-row: span 4;
+}
+
 @media (min-width: 850px){
     .home-card-grid {
         grid-auto-flow: column;
         grid-template-columns: repeat(auto-fit, min(300px, 1fr));
-    }
-    .card {
-        grid-row: span 4;
-    }
-}
-
-@media (max-width: 500px) {
-    .home-card-grid {
-        grid-template-columns: min(300px, 1fr);
-    }
-    .card {
-        grid-row: span 4;
     }
 }
 
@@ -647,5 +640,5 @@ footer {
 }
 
 .update-indicator {
-    color: gold;
+    color: navajowhite;
 }
