@@ -194,7 +194,7 @@ header {
         transparent 70%);
 }
 
-header:has(#nav-menu-toggle:checked) {
+#nav-menu-toggle:checked + #navbar {
     position: sticky;
 }
 
@@ -212,15 +212,16 @@ header:has(#nav-menu-toggle:checked) {
     position: absolute;
     right: var(--default-page-margin);
     inset-block: 0;
-    margin-block: auto;
+    display: flex;
+    align-items: center;
 }
 
 .hamburger {
     --hamburger-color: var(--default-white);
     --transition-duration: 1000ms;
     display: block;
-    width: 32px;
-    height: 4px;
+    width: 24px;
+    height: 3px;
     background-color: var(--hamburger-color);
     transition: var(--transition-duration);
 }
@@ -235,26 +236,26 @@ header:has(#nav-menu-toggle:checked) {
 }
 
 .hamburger::before {
-    translate: 0 -10px;
+    translate: 0 -7.5px;
 }
 
 .hamburger::after {
-    translate: 0 10px;
+    translate: 0 7.5px;
 }
 
 #nav-menu-button:hover .hamburger {
     --hamburger-color: var(--default-beige-light);
 }
 
-header:has(#nav-menu-toggle:checked) .hamburger {
+#nav-menu-toggle:checked + #navbar .hamburger {
     rotate: -315deg;
 }
 
-header:has(#nav-menu-toggle:checked) .hamburger::before, header:has(#nav-menu-toggle:checked) .hamburger::after {
+#nav-menu-toggle:checked + #navbar .hamburger::before, #nav-menu-toggle:checked + #navbar .hamburger::after {
     translate: 0 0;
 }
 
-header:has(#nav-menu-toggle:checked) .hamburger::before{
+#nav-menu-toggle:checked + #navbar .hamburger::before{
     rotate: -90deg;
 }
 
@@ -262,7 +263,7 @@ header:has(#nav-menu-toggle:checked) .hamburger::before{
     display: none;
 }
 
-header:has(#nav-menu-toggle:checked) #nav-menu-backdrop {
+#nav-menu-toggle:checked + #navbar #nav-menu-backdrop {
     display: block;
     position: absolute;
     inset-inline: 0;
@@ -286,6 +287,11 @@ header:has(#nav-menu-toggle:checked) #nav-menu-backdrop {
     font-family: "Phudu";
     background-color: var(--default-black);
     text-align: right;
+    display: none;
+}
+
+#nav-menu-toggle:checked + #navbar #navbar-links {
+    display: block;
 }
 
 #navbar-links li {
