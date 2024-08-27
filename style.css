@@ -265,7 +265,6 @@ header:has(#nav-menu-toggle:checked) {
 
 #nav-menu-backdrop {
     display: none;
-    z-index: -2;
 }
 
 #nav-menu-toggle:checked + #navbar #nav-menu-backdrop {
@@ -275,6 +274,7 @@ header:has(#nav-menu-toggle:checked) {
     top: var(--navbar-height);
     height: calc(100dvh - var(--navbar-height));
     background: linear-gradient(-90deg, var(--default-black) 10%, transparent);
+    z-index: -2;
 }
 
 #navbar-links, #navbar-links li {
