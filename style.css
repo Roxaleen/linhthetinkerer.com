@@ -194,7 +194,7 @@ header {
         transparent 70%);
 }
 
-#nav-menu-toggle:checked + #navbar {
+header:has(#nav-menu-toggle:checked) {
     position: sticky;
     top: 0;
     z-index: 1;
@@ -213,7 +213,8 @@ header {
 #nav-menu-button {
     position: absolute;
     right: var(--default-page-margin);
-    inset-block: 0;
+    top: 0;
+    height: var(--navbar-height);
     display: flex;
     align-items: center;
 }
@@ -226,6 +227,7 @@ header {
     height: 3px;
     background-color: var(--hamburger-color);
     transition: var(--transition-duration);
+    position: relative;
 }
 
 .hamburger::before, .hamburger::after {
@@ -263,6 +265,7 @@ header {
 
 #nav-menu-backdrop {
     display: none;
+    z-index: -2;
 }
 
 #nav-menu-toggle:checked + #navbar #nav-menu-backdrop {
