@@ -59,7 +59,7 @@ p:last-child, p:only-child {
     margin: 0;
 }
 
-button, .button {
+button:not(.style-reset), .button {
     --_font-size: 0.8rem;
     --_height: calc(var(--_font-size) * 2.25);
     --_diag-gradient-left: calc(var(--_height) * sqrt(2) / 2);
@@ -87,14 +87,14 @@ button, .button {
     text-decoration: none;
 }
 
-button:hover, button:focus, .button:hover, .button:focus {
+button:not(.style-reset):hover, button:not(.style-reset):focus, .button:hover, .button:focus {
     background-image: linear-gradient(45deg,
         var(--_bg-dark) var(--_diag-gradient-left),
         var(--_bg-dark50) 0 var(--_diag-gradient-right),
         var(--_bg-dark) var(--_diag-gradient-right));
 }
 
-button:active, .button:active {
+button:not(.style-reset):active, .button:active {
     box-shadow: 1px 1px var(--default-black),
         2px 2px var(--default-black),
         3px 3px var(--default-black);
@@ -104,6 +104,7 @@ a:not(.style-reset, .button) {
     --link-color: var(--default-purple-light);
     --link-active-color: var(--default-purple-dark);
     color: var(--link-color);
+    position: relative;
     text-decoration: none;
 }
 
@@ -193,6 +194,10 @@ header {
         transparent 70%);
 }
 
+header:has(#nav-menu-toggle:checked) {
+    position: sticky;
+}
+
 #navbar-logo {
     position: absolute;
     left: var(--default-page-margin);
@@ -200,6 +205,10 @@ header {
 }
 
 #nav-menu-toggle {
+    display: none;
+}
+
+#nav-menu-button {
     position: absolute;
     right: var(--default-page-margin);
     inset-block: 0;
@@ -208,8 +217,8 @@ header {
 
 .hamburger {
     --hamburger-color: var(--default-white);
-    --hamburger-hover-color: var(--default-beige-light);
     --transition-duration: 1000ms;
+    display: block;
     width: 32px;
     height: 4px;
     background-color: var(--hamburger-color);
@@ -233,23 +242,54 @@ header {
     translate: 0 10px;
 }
 
-#navbar-links ul, li {
+#nav-menu-button:hover .hamburger {
+    --hamburger-color: var(--default-beige-light);
+}
+
+header:has(#nav-menu-toggle:checked) .hamburger {
+    rotate: -315deg;
+}
+
+header:has(#nav-menu-toggle:checked) .hamburger::before, header:has(#nav-menu-toggle:checked) .hamburger::after {
+    translate: 0 0;
+}
+
+header:has(#nav-menu-toggle:checked) .hamburger::before{
+    rotate: -90deg;
+}
+
+#nav-menu-backdrop {
+    display: none;
+}
+
+header:has(#nav-menu-toggle:checked) #nav-menu-backdrop {
+    display: block;
+    position: absolute;
+    inset-inline: 0;
+    top: var(--navbar-height);
+    height: calc(100dvh - var(--navbar-height));
+    background: linear-gradient(-90deg, var(--default-black) 10%, transparent);
+}
+
+#navbar-links, #navbar-links li {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-#navbar-links ul {
+#navbar-links {
     position: absolute;
     top: var(--navbar-height);
     right: 0;
-    bottom: 0;
+    height: calc(100dvh - var(--navbar-height));
+    padding: 1rem var(--default-page-margin);
     font-family: "Phudu";
     background-color: var(--default-black);
+    text-align: right;
 }
 
 #navbar-links li {
-    padding: 0.5rem var(--default-page-margin);
+    padding: 0.75rem 0;
 }
 
 #navbar-links a {
@@ -268,7 +308,7 @@ header {
         height: 100%;
     }
     
-    #nav-menu-toggle {
+    #nav-menu-button {
         display: none;
     }
 

@@ -15,15 +15,17 @@
     <header>
         <a id="navbar-logo" class="logo style-reset" aria-label="logo" href="#"></a>
         <nav id="navbar">
-            <button id="nav-menu-toggle" aria-label="menu" aria-controls="navbar-links">
-                <div class="hamburger"></div>
-            </button>
-            <ul id="navbar-links" aria-expanded="false">
+            <input id="nav-menu-toggle" type="checkbox" aria-hidden="true">
+            <label id="nav-menu-button" for="nav-menu-toggle" role="button" aria-label="toggle navigation menu" aria-controls="navbar-links">
+                <span class="hamburger"></span>
+            </label>
+            <ul id="navbar-links">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Tinker Space</a></li>
                 <li><a href="#">Resources</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
+            <label id="nav-menu-backdrop" for="nav-menu-toggle" role="button" aria-label="toggle navigation menu" aria-controls="navbar-links"></label>
         </nav>
     </header>
     <main>
