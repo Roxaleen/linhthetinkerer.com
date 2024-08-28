@@ -29,7 +29,7 @@ section {
     padding: var(--default-page-margin);
 }
 
-h1 {
+h1, .h1 {
     font-family: "Phudu";
     font-size: 2rem;
     font-weight: bold;
@@ -194,7 +194,7 @@ header {
         transparent 70%);
 }
 
-header:has(#nav-menu-toggle:checked) {
+header:has(#navbar-links[aria-expanded="true"]) {
     position: sticky;
     top: 0;
     z-index: 1;
@@ -206,10 +206,6 @@ header:has(#nav-menu-toggle:checked) {
     top: calc((var(--navbar-height) - var(--logo-size)) * 0.4375);
 }
 
-#nav-menu-toggle {
-    display: none;
-}
-
 #nav-menu-button {
     position: absolute;
     right: var(--default-page-margin);
@@ -217,6 +213,12 @@ header:has(#nav-menu-toggle:checked) {
     height: var(--navbar-height);
     display: flex;
     align-items: center;
+}
+
+#nav-menu-button, #nav-menu-button:hover, #nav-menu-button:focus, #nav-menu-button:active {
+    background: transparent;
+    border: none;
+    outline: none;
 }
 
 .hamburger {
@@ -251,31 +253,32 @@ header:has(#nav-menu-toggle:checked) {
     --hamburger-color: var(--default-beige-light);
 }
 
-#nav-menu-toggle:checked + #navbar .hamburger {
+#navbar:has(#navbar-links[aria-expanded="true"]) .hamburger {
     rotate: -315deg;
 }
 
-#nav-menu-toggle:checked + #navbar .hamburger::before, #nav-menu-toggle:checked + #navbar .hamburger::after {
+#navbar:has(#navbar-links[aria-expanded="true"]) .hamburger::before, #navbar:has(#navbar-links[aria-expanded="true"]) .hamburger::after {
     translate: 0 0;
 }
 
-#nav-menu-toggle:checked + #navbar .hamburger::before{
+#navbar:has(#navbar-links[aria-expanded="true"]) .hamburger::before{
     rotate: -90deg;
 }
 
-#nav-menu-backdrop {
-    display: none;
-}
-
-#nav-menu-toggle:checked + #navbar #nav-menu-backdrop {
-    display: block;
+#navbar::after {
     position: absolute;
     inset-inline: 0;
     top: var(--navbar-height);
     height: calc(100dvh - var(--navbar-height));
     background-color: var(--default-purple-dark50);
-    opacity: 0.5;
     z-index: -2;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#navbar:has(#navbar-links[aria-expanded="true"])::after {
+    opacity: 0.5;
+    visibility: visible;
 }
 
 #navbar-links, #navbar-links li {
@@ -293,11 +296,14 @@ header:has(#nav-menu-toggle:checked) {
     font-family: "Phudu";
     background-color: var(--default-black);
     text-align: right;
-    display: none;
+    translate: 100% 0;
+    visibility: hidden;
+    transition: 1s;
 }
 
-#nav-menu-toggle:checked + #navbar #navbar-links {
-    display: block;
+#navbar-links[aria-expanded="true"] {
+    visibility: visible;
+    translate: 0 0;
 }
 
 #navbar-links li {
@@ -419,14 +425,6 @@ header:has(#nav-menu-toggle:checked) {
 #hero-1, #hero-2 {
     display: grid;
     grid-template-rows: subgrid;
-}
-
-.hero-header {
-    font-family: "Phudu";
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: left;
-    margin: 0 0 1rem 0;
 }
 
 #hero-image {
@@ -640,5 +638,5 @@ footer {
 }
 
 .update-indicator {
-    color: navajowhite;
+    color: lightsalmon;
 }
