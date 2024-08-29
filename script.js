@@ -7,16 +7,10 @@ function toggleNavMenu() {
     if(navMenu.getAttribute('aria-expanded') === 'true') {
         navMenu.setAttribute('aria-expanded','false');
         navBtn.setAttribute('aria-label','Open navigation menu');
-        document.addEventListener('focusin', closeMenuOnOutsideFocus);
     } else {
         navMenu.setAttribute('aria-expanded','true');
         navBtn.setAttribute('aria-label','Close navigation menu');
-        document.removeEventListener('focusin', closeMenuOnOutsideFocus);
     }
-}
-
-function closeMenuOnOutsideFocus(event) {
-    if (!navMenu.contains(event.target)) {toggleNavMenu();}
 }
 
 navBtn.addEventListener('click', toggleNavMenu);
