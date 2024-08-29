@@ -396,7 +396,7 @@ header:has(#navbar-links[aria-expanded="true"]) {
     }
 
     #navbar-links li::after {
-        content: "";
+        content: none !important;
     }
 
     #navbar-links li a {
