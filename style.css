@@ -281,7 +281,7 @@ header:has(#navbar-links[aria-expanded="true"]) {
     transition-duration: 1000ms;
 }
 
-#navbarlinks[aria-expanded="true"] ~ #nav-menu-backdrop {
+#navbar-links[aria-expanded="true"] ~ #nav-menu-backdrop {
     opacity: 0.5;
     visibility: visible;
 }
