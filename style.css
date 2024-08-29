@@ -117,7 +117,7 @@ a:not(.style-reset, .button)::before {
     top: 100%;
     width: 0;
     height: 2px;
-    background-color: currentColor;
+    background-color: var(--link-underline-color);
     transition: width 1000ms;
 }
 
@@ -276,6 +276,7 @@ header:has(#navbar-links[aria-expanded="true"]) {
     top: var(--navbar-height);
     height: calc(100dvh - var(--navbar-height));
     background-color: var(--default-purple-dark50);
+    border: none;
     z-index: -1;
     opacity: 0;
     visibility: hidden;
@@ -359,11 +360,11 @@ header:has(#navbar-links[aria-expanded="true"]) {
     --link-underline-color: var(--default-red-dark);
 }
 
-#navbar-links li:nth-child(1) a {
+#navbar-links li:nth-child(3) a {
     --link-underline-color: var(--default-yellow-dark);
 }
 
-#navbar-links li:nth-child(1) a {
+#navbar-links li:nth-child(4) a {
     --link-underline-color: var(--default-green-dark);
 }
 
