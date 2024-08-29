@@ -13,9 +13,9 @@
 
 <body>
     <header>
-        <a id="navbar-logo" class="logo style-reset" aria-label="logo" href="#"></a>
+        <a id="navbar-logo" class="logo style-reset" aria-label="Logo" href="#"></a>
         <nav id="navbar">
-            <button id="nav-menu-button" class="style-reset" aria-label="toggle navigation menu" aria-controls="navbar-links">
+            <button id="nav-menu-button" class="style-reset" aria-label="Open navigation menu" aria-controls="navbar-links">
                 <span class="hamburger"></span>
             </button>
             <ul id="navbar-links" aria-expanded="false">
@@ -24,10 +24,11 @@
                 <li><a href="#">Resources</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
+            <button id="nav-menu-backdrop" class="style-reset" aria-label="Close navigation menu" aria-controls="navbar-links"></button>
         </nav>
     </header>
     <main>
-        <section id="hero" aria-label="hero">
+        <section id="hero" aria-label="Hero">
             <div id="hero-image"></div>
             <div id="hero-1">
                 <h1 class="hero-header">Hello, I'm Linh…</h1>
@@ -47,7 +48,7 @@
                 </p>
             </div>
         </section>
-        <section aria-label="quick links">
+        <section aria-label="Quick links">
             <p class="preheader">Here is some clever segue that I haven't come up with yet.</p>
             <h2>Here are the stuff you'll find on this website.</h2>
             <div class="home-card-grid">
@@ -71,14 +72,14 @@
                 </div>
             </div>
         </section>
-        <section class="banner" aria-label="contact">
+        <section class="banner" aria-label="Contact">
             <h2>Questions&nbsp;<span class="diagonal-slash"></span>&nbsp;comments&nbsp;<span class="diagonal-slash"></span>&nbsp;suggestions</h2>
             <a class="button display-button" href="#">Contact me</a>
         </section>
     </main>
     <footer>
         <p class="update-indicator">
-            Last commit: 29 Aug 5:50PM
+            Last commit: 29 Aug 7:04PM
         </p>
         <button onclick="location.href = location.href.split('?')[0] + '?' + new Date().getTime();">Reload</button>
     </footer>

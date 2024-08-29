@@ -23,6 +23,7 @@
 
 body {
     margin: 0;
+    overflow-x: hidden;
 }
 
 section {
@@ -116,7 +117,7 @@ a:not(.style-reset, .button)::before {
     width: 0;
     height: 2px;
     background-color: currentColor;
-    transition: width 1s;
+    transition: width 1000ms;
 }
 
 a:not(.style-reset, .button):hover::before, a:not(.style-reset):focus::before {
@@ -228,7 +229,8 @@ header:has(#navbar-links[aria-expanded="true"]) {
     width: 24px;
     height: 3px;
     background-color: var(--hamburger-color);
-    transition: var(--transition-duration);
+    transition-property: rotate;
+    transition-duration: var(--transition-duration);
     position: relative;
 }
 
@@ -238,7 +240,8 @@ header:has(#navbar-links[aria-expanded="true"]) {
     position: absolute;
     inset: 0;
     background-color: var(--hamburger-color);
-    transition: var(--transition-duration);
+    transition-property: translate, rotate;
+    transition-duration: var(--transition-duration);
 }
 
 .hamburger::before {
@@ -265,15 +268,17 @@ header:has(#navbar-links[aria-expanded="true"]) {
     rotate: -90deg;
 }
 
-#navbar::after {
+#nav-menu-backdrop {
     position: absolute;
     inset-inline: 0;
     top: var(--navbar-height);
     height: calc(100dvh - var(--navbar-height));
     background-color: var(--default-purple-dark50);
-    z-index: -2;
+    z-index: -1;
     opacity: 0;
     visibility: hidden;
+    transition-property: opacity, visibility;
+    transition-duration: 1000ms;
 }
 
 #navbar:has(#navbar-links[aria-expanded="true"])::after {
@@ -298,7 +303,8 @@ header:has(#navbar-links[aria-expanded="true"]) {
     text-align: right;
     translate: 100% 0;
     visibility: hidden;
-    transition: 1s;
+    transition-property: translate, visibility;
+    transition-duration: 1000ms;
 }
 
 #navbar-links[aria-expanded="true"] {
