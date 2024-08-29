@@ -281,6 +281,11 @@ header:has(#navbar-links[aria-expanded="true"]) {
     transition-duration: 1000ms;
 }
 
+#navbarlinks[aria-expanded="true"] ~ #nav-menu-backdrop {
+    opacity: 0.5;
+    visibility: visible;
+}
+
 #navbar:has(#navbar-links[aria-expanded="true"])::after {
     opacity: 0.5;
     visibility: visible;
@@ -334,6 +339,8 @@ header:has(#navbar-links[aria-expanded="true"]) {
 
     #navbar-links {
         position: unset;
+        visibility: visible;
+        translate: 0;
         height: var(--navbar-height);
         display: flex;
         justify-content: center;
