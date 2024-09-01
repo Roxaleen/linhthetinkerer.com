@@ -200,6 +200,16 @@ header:has(#navbar-links[aria-expanded="true"]) {
     position: sticky;
     top: 0;
     z-index: 1;
+    animation: header-position-delay 0ms 1000ms;
+}
+
+@keyframes header-position-delay {
+    from {
+        position: sticky;
+    }
+    to {
+        position: sticky;
+    }
 }
 
 #navbar-logo {
@@ -291,11 +301,9 @@ header:has(#navbar-links[aria-expanded="true"]) {
 
 @keyframes fade-in {
     from {
-        display: none;
         opacity: 0;
     }
     to {
-        display: block;
         opacity: var(--opacity, 1);
     }
 }
@@ -338,11 +346,9 @@ header:has(#navbar-links[aria-expanded="true"]) {
 
 @keyframes slide-in {
     from {
-        display: none;
         translate: 100% 0;
     }
     to {
-        display: block;
         translate: 0 0;
     }
 }
@@ -738,5 +744,5 @@ footer {
 }
 
 .update-indicator {
-    color: blanchedalmond;
+    color: azure;
 }
