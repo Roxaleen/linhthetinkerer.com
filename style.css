@@ -339,12 +339,10 @@ header:has(#navbar-links[aria-expanded="true"]) {
 @keyframes slide-in {
     from {
         display: none;
-        opacity: 0;
         translate: 100% 0;
     }
     to {
         display: block;
-        opacity: var(--opacity, 1);
         translate: 0 0;
     }
 }
@@ -740,5 +738,5 @@ footer {
 }
 
 .update-indicator {
-    color: chocolate;
+    color: blanchedalmond;
 }
