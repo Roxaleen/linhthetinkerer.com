@@ -280,13 +280,13 @@ header:has(#navbar-links[aria-expanded="true"]) {
     border: none;
     z-index: -1;
     display: none;
-    animation: fade-in 1000ms;
+    animation: fade-out 1000ms;
 }
 
 #navbar-links[aria-expanded="true"] ~ #nav-menu-backdrop {
     opacity: var(--opacity);
     display: block;
-    animation: fade-out 1000ms;
+    animation: fade-in 1000ms;
 }
 
 @keyframes fade-in {
@@ -328,12 +328,12 @@ header:has(#navbar-links[aria-expanded="true"]) {
     background-color: var(--default-black);
     text-align: right;
     display: none;
-    animation: slide-in 1000ms;
+    animation: slide-out 1000ms;
 }
 
 #navbar-links[aria-expanded="true"] {
     display: block;
-    animation: slide-out 1000ms;
+    animation: slide-in 1000ms;
 }
 
 @keyframes slide-in {
@@ -740,5 +740,5 @@ footer {
 }
 
 .update-indicator {
-    color: cornflowerblue;
+    color: chocolate;
 }
