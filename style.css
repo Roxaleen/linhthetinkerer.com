@@ -271,6 +271,7 @@ header:has(#navbar-links[aria-expanded="true"]) {
 }
 
 #nav-menu-backdrop {
+    --opacity: 0.5;
     position: absolute;
     inset-inline: 0;
     top: var(--navbar-height);
@@ -278,20 +279,36 @@ header:has(#navbar-links[aria-expanded="true"]) {
     background-color: var(--default-purple-dark50);
     border: none;
     z-index: -1;
-    opacity: 0;
-    visibility: hidden;
-    transition-property: opacity, visibility;
-    transition-duration: 1000ms;
+    display: none;
+    animation: fade-in 1000ms;
 }
 
 #navbar-links[aria-expanded="true"] ~ #nav-menu-backdrop {
-    opacity: 0.5;
-    visibility: visible;
+    opacity: var(--opacity);
+    display: block;
+    animation: fade-out 1000ms;
 }
 
-#navbar:has(#navbar-links[aria-expanded="true"])::after {
-    opacity: 0.5;
-    visibility: visible;
+@keyframes fade-in {
+    from {
+        display: none;
+        opacity: 0;
+    }
+    to {
+        display: block;
+        opacity: var(--opacity, 1);
+    }
+}
+
+@keyframes fade-out {
+    from {
+        display: block;
+        opacity: var(--opacity, 1);
+    }
+    to {
+        display: none;
+        opacity: 0;
+    }
 }
 
 #navbar-links, #navbar-links li {
@@ -310,15 +327,39 @@ header:has(#navbar-links[aria-expanded="true"]) {
     font-family: "Phudu";
     background-color: var(--default-black);
     text-align: right;
-    translate: 100% 0;
-    visibility: hidden;
-    transition-property: translate, visibility;
-    transition-duration: 1000ms;
+    display: none;
+    animation: slide-in 1000ms;
 }
 
 #navbar-links[aria-expanded="true"] {
-    visibility: visible;
-    translate: 0 0;
+    display: block;
+    animation: slide-out 1000ms;
+}
+
+@keyframes slide-in {
+    from {
+        display: none;
+        opacity: 0;
+        translate: 100% 0;
+    }
+    to {
+        display: block;
+        opacity: var(--opacity, 1);
+        translate: 0 0;
+    }
+}
+
+@keyframes slide-out {
+    from {
+        display: block;
+        opacity: var(--opacity, 1);
+        translate: 0 0;
+    }
+    to {
+        display: none;
+        opacity: 0;
+        translate: 100% 0;
+    }
 }
 
 #navbar-links li {
@@ -381,7 +422,7 @@ header:has(#navbar-links[aria-expanded="true"]) {
 
     #navbar-links {
         position: unset;
-        visibility: visible;
+        display: block;
         translate: 0;
         height: var(--navbar-height);
         display: flex;
@@ -389,6 +430,7 @@ header:has(#navbar-links[aria-expanded="true"]) {
         padding: 0;
         background: transparent;
         text-align: center;
+        animation: none;
     }
 
     #navbar-links li {
@@ -698,5 +740,5 @@ footer {
 }
 
 .update-indicator {
-    color: greenyellow;
+    color: cornflowerblue;
 }
