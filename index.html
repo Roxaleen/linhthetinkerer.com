@@ -13,18 +13,18 @@
 
 <body>
     <header>
-        <a id="navbar-logo" class="logo style-reset" aria-label="Logo" href="#"></a>
+        <a id="navbar-logo" class="logo" aria-label="Logo" href="#"></a>
         <nav id="navbar">
-            <button id="nav-menu-button" class="style-reset" aria-label="Open navigation menu" aria-controls="navbar-links">
+            <button id="nav-menu-button" aria-label="Open navigation menu" aria-controls="navbar-links">
                 <span class="hamburger"></span>
             </button>
             <ul id="navbar-links" aria-expanded="false">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Tinker Space</a></li>
-                <li><a href="#">Resources</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#" class="link">Home</a></li>
+                <li><a href="#" class="link">Tinker Space</a></li>
+                <li><a href="#" class="link">Resources</a></li>
+                <li><a href="#" class="link">Contact</a></li>
             </ul>
-            <button id="nav-menu-backdrop" class="style-reset" aria-label="Close navigation menu" aria-controls="navbar-links"></button>
+            <button id="nav-menu-backdrop" aria-label="Close navigation menu" aria-controls="navbar-links"></button>
         </nav>
     </header>
     <main>
@@ -79,9 +79,9 @@
     </main>
     <footer>
         <p class="update-indicator">
-            Last commit: 1 Sep 10:16AM
+            Last commit: 1 Sep 10:19AM
         </p>
-        <button onclick="location.href = location.href.split('?')[0] + '?' + new Date().getTime();">Reload</button>
+        <button class="button" onclick="location.href = location.href.split('?')[0] + '?' + new Date().getTime();">Reload</button>
     </footer>
     <script src="script.js"></script>
 </body>

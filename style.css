@@ -60,7 +60,7 @@ p:last-child, p:only-child {
     margin: 0;
 }
 
-button:not(.style-reset), .button {
+.button {
     --_font-size: 0.8rem;
     --_height: calc(var(--_font-size) * 2.25);
     --_diag-gradient-left: calc(var(--_height) * sqrt(2) / 2);
@@ -88,20 +88,20 @@ button:not(.style-reset), .button {
     text-decoration: none;
 }
 
-button:not(.style-reset):hover, button:not(.style-reset):focus, .button:hover, .button:focus {
+.button:hover, .button:focus {
     background-image: linear-gradient(45deg,
         var(--_bg-dark) var(--_diag-gradient-left),
         var(--_bg-dark50) 0 var(--_diag-gradient-right),
         var(--_bg-dark) var(--_diag-gradient-right));
 }
 
-button:not(.style-reset):active, .button:active {
+.button:active {
     box-shadow: 1px 1px var(--default-black),
         2px 2px var(--default-black),
         3px 3px var(--default-black);
 }
 
-a:not(.style-reset, .button) {
+.link {
     --link-color: var(--default-purple-light);
     --link-active-color: var(--default-purple-dark);
     --link-underline-color: currentColor;
@@ -110,7 +110,7 @@ a:not(.style-reset, .button) {
     text-decoration: none;
 }
 
-a:not(.style-reset, .button)::before {
+.link::before {
     content: "";
     position: absolute;
     left: 0;
@@ -121,11 +121,11 @@ a:not(.style-reset, .button)::before {
     transition: width 1000ms;
 }
 
-a:not(.style-reset, .button):hover::before, a:not(.style-reset):focus::before {
+.link:hover::before, .link:focus::before {
     width: 100%;
 }
 
-a:not(.style-reset, .button):active {
+.link:active {
     color: var(--link-active-color);
 }
 
