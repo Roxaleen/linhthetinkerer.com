@@ -23,7 +23,7 @@
 
 body {
     margin: 0;
-    overflow-x: hidden;
+    background-color: var(--default-white);
 }
 
 section {
@@ -732,5 +732,5 @@ footer {
 }
 
 .update-indicator {
-    color: olivedrab;
+    color: hotpink;
 }
