@@ -30,6 +30,10 @@ section {
     padding: var(--default-page-margin);
 }
 
+*:focus {
+    outline: none;
+}
+
 h1, .h1 {
     font-family: "Phudu";
     font-size: 2rem;
@@ -88,7 +92,7 @@ p:last-child, p:only-child {
     text-decoration: none;
 }
 
-.button:hover, .button:focus {
+.button:hover, .button:focus-visible {
     background-image: linear-gradient(45deg,
         var(--_bg-dark) var(--_diag-gradient-left),
         var(--_bg-dark50) 0 var(--_diag-gradient-right),
@@ -121,16 +125,12 @@ p:last-child, p:only-child {
     transition: width 1000ms;
 }
 
-.link:hover::before, .link:focus::before {
+.link:hover::before, .link:focus-visible::before {
     width: 100%;
 }
 
 .link:active {
     color: var(--link-active-color);
-}
-
-*:focus {
-    outline: none;
 }
 
 .logo {
@@ -218,14 +218,14 @@ header:has(#navbar-links[aria-expanded="true"]) {
     padding: 0;
 }
 
-#nav-menu-button, #nav-menu-button:hover, #nav-menu-button:focus, #nav-menu-button:active {
+#nav-menu-button, #nav-menu-button:hover, #nav-menu-button:focus-visible, #nav-menu-button:active {
     background: transparent;
     border: none;
     outline: none;
 }
 
 .hamburger {
-    --hamburger-color: var(--default-white);
+    --hamburger-color: var(--default-beige-light);
     --transition-duration: 1000ms;
     display: block;
     width: 24px;
@@ -254,7 +254,7 @@ header:has(#navbar-links[aria-expanded="true"]) {
     translate: 0 7.5px;
 }
 
-#nav-menu-button:hover .hamburger, #nav-menu-button:focus .hamburger {
+#nav-menu-button:hover .hamburger, #nav-menu-button:focus-visible .hamburger {
     --hamburger-color: var(--default-beige-dark);
 }
 
@@ -463,7 +463,7 @@ header:has(#navbar-links[aria-expanded="true"]) {
         transform: skewX(45deg);
     }
     
-    #navbar-links a:hover::before, #navbar-links a:focus::before {
+    #navbar-links a:hover::before, #navbar-links a:focus-visible::before {
         width: calc(100% + var(--navbar-height-half));
     }
     
@@ -732,5 +732,5 @@ footer {
 }
 
 .update-indicator {
-    color: hotpink;
+    color: aquamarine;
 }
