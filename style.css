@@ -109,24 +109,19 @@ p:last-child, p:only-child {
     --link-color: var(--default-purple-light);
     --link-active-color: var(--default-purple-dark);
     --link-underline-color: currentColor;
+    --link-underline-size: 0.0625em;
     color: var(--link-color);
     position: relative;
     text-decoration: none;
+    background-image: linear-gradient(var(--link-underline-color) var(--link-underline-size), transparent var(--link-underline-size));
+    background-size: 0 1px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    transition: background-size 1000ms;  
 }
 
-.link::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 100%;
-    width: 0;
-    height: 2px;
-    background-color: var(--link-underline-color);
-    transition: width 1000ms;
-}
-
-.link:hover::before, .link:focus-visible::before {
-    width: 100%;
+.link:hover, .link:focus-visible {
+    background-size: 100% 1px;
 }
 
 .link:active {
@@ -732,5 +727,5 @@ footer {
 }
 
 .update-indicator {
-    color: aquamarine;
+    color: mediumslateblue;
 }
