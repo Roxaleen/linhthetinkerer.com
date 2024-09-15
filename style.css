@@ -378,6 +378,25 @@ header:has(#navbar-links[aria-expanded="true"]) {
 #navbar-links a {
     --link-color: var(--default-white);
     --link-active-color: var(--default-beige-light);
+    --link-underline-color: currentColor;
+    color: var(--link-color);
+    position: relative;
+    text-decoration: none;
+}
+
+#navbar-links a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 0;
+    height: 2px;
+    background-color: var(--link-underline-color);
+    transition: width 1000ms;
+}
+
+#navbar-links a:hover::before, #navbar-links a:focus-visible::before {
+    width: 100%;
 }
 
 #navbar-links li:nth-child(1) a {
@@ -727,5 +746,5 @@ footer {
 }
 
 .update-indicator {
-    color: mediumslateblue;
+    color: lightcoral;
 }
